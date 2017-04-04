@@ -12,8 +12,11 @@ public class FingerBehavior : MonoBehaviour {
 	public float fingerResolution;
 	public float moveTime;
 	bool initialized;
+	GameObject tipSprite;
+	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource>();
 		initialized = false;
 		lineRenderer = GetComponent<LineRenderer>();
 		fingerAnimationCurve = new AnimationCurve();
@@ -59,6 +62,7 @@ public class FingerBehavior : MonoBehaviour {
 			colliderPoints[i - 1] = new Vector2(transform.GetChild(i - 1).localPosition.x, transform.GetChild(i - 1).localPosition.y);
 		}
 		collider.points = colliderPoints;
+		tipSprite = Instantiate(Resources.Load<GameObject>("FingerTip"));
 		StartCoroutine(AnimateFingerInit());
 		tip = transform.GetChild(transform.childCount - 1).GetComponent<Rigidbody2D>();
 	}
@@ -88,17 +92,24 @@ public class FingerBehavior : MonoBehaviour {
 		for(int k = 0; k < lineRenderer.numPositions; k++){	
 			lineRenderer.SetPosition(k, new Vector3(distancePerPoint * k, fingerAnimationCurve.Evaluate(distancePerPoint * k)));
 		}
+		tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(lineRenderer.GetPosition(lineRenderer.numPositions - 1));
+		//tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.numPositions - 2) - position)));
+
 	}
 
 	IEnumerator AnimateFingerInit() {
 		float t = 0;
 		while(t < Vector3.Distance(Vector3.zero, transform.worldToLocalMatrix.MultiplyPoint(targetPosition))) {
 			lineRenderer.numPositions = lineRenderer.numPositions + 1;
-			lineRenderer.SetPosition(lineRenderer.numPositions -1, new Vector3(t, fingerAnimationCurve.Evaluate(t)));
-			t += Time.deltaTime * 60;
+			Vector3 position = new Vector3(t, fingerAnimationCurve.Evaluate(t));
+			lineRenderer.SetPosition(lineRenderer.numPositions -1, position);
+			tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(position);
+			tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.numPositions - 2) - position)));
+			t += Time.deltaTime * 80;
 			yield return null;
 		}
 		tip.MovePosition(targetPosition);
+		audioSource.Play();
 		initialized = true;
 	}
 
@@ -108,6 +119,9 @@ public class FingerBehavior : MonoBehaviour {
 			tip.MovePosition(Vector3.Lerp(currentPos, targetPosition, t / moveTime));
 			yield return null;
 		}
+		audioSource.Play();
 		tip.MovePosition(targetPosition);
+		yield return new WaitForSeconds(0.1f);
+		tip.MovePosition(tip.transform.position + (Vector3.up * 0.5f));
 	}
 }

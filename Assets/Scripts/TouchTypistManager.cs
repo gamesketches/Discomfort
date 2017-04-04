@@ -59,7 +59,7 @@ public class TouchTypistManager : MonoBehaviour {
 		currentPhraseIndex = 0;
 
 		audioSource = GetComponent<AudioSource>();
-		audioSource.clip = Resources.Load<AudioClip>("Sounds/TouchTypist/type1");
+		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
 		timer.text = "";
 		timer.color = Color.clear;
 
@@ -134,7 +134,7 @@ public class TouchTypistManager : MonoBehaviour {
 		currentPhrase.rightHeldKey = nextPhrase.rightHeldKey;
 		leftHoldText.text = currentPhrase.leftHeldKey.ToString();
 		rightHoldText.text = currentPhrase.rightHeldKey.ToString();
-		audioSource.clip = Resources.Load<AudioClip>("Sounds/TypingGame/slide");
+		audioSource.clip = Resources.Load<AudioClip>("Sounds/slide");
 		audioSource.Play();
 		Vector3 offset = currentPhrase.position - currentText.rectTransform.localPosition;
 		Vector3 startPos = paperSprite.transform.position;
@@ -145,15 +145,18 @@ public class TouchTypistManager : MonoBehaviour {
 		}
 		timer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
 		StartCoroutine(AddTime(nextPhrase.timeBonus));
-		yield return StartCoroutine(MoveText(currentText, offset));
+		//StartCoroutine(MoveText(currentText, offset));
 		timer.color = new Color(255f / 255f, 101f / 255f, 112f/ 255f);
 		Text oldText = Instantiate(currentText, currentText.transform.parent) as Text;
 		oldText.rectTransform.localPosition = currentPhrase.position;
 		oldText.tag = "FinishedText";
 		oldText.color = Color.black;
-		audioSource.clip = Resources.Load<AudioClip>("Sounds/TypingGame/type1");
+		currentText.rectTransform.Translate(-offset / 2);
+		StartCoroutine(MoveText(oldText, offset));
+		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
 		currentPhrase = phrases.Dequeue();
 		currentText.text = currentPhrase.textContent;
+		yield return StartCoroutine(MoveText(currentText, offset));
 		leftHoldText.text = currentPhrase.leftHeldKey.ToString();
 		rightHoldText.text = currentPhrase.rightHeldKey.ToString();
 		//currentTime += currentPhrase.timeBonus;
@@ -202,7 +205,7 @@ public class TouchTypistManager : MonoBehaviour {
 			leftHoldText.color = Color.red;
 		}
 		else {
-			leftHoldText.color = Color.grey;
+			leftHoldText.color = Color.blue;
 		}
 
 		if(currentPhrase.rightHeldKey == KeyCode.None) {
@@ -212,7 +215,7 @@ public class TouchTypistManager : MonoBehaviour {
 			rightHoldText.color = Color.red;
 		}
 		else {
-			rightHoldText.color = Color.grey;
+			rightHoldText.color = Color.blue;
 		}
 	}
 
