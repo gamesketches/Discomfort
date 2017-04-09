@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: 00c2d57643cde4a928499049439adad2
+timeCreated: 1491770947
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: typeWriterSheet_0
+    21300002: typeWriterSheet_1
+    21300004: typeWriterSheet_2
+    21300006: typeWriterSheet_3
+    21300008: typeWriterSheet_4
+    21300010: typeWriterSheet_5
+    21300012: typeWriterSheet_6
+    21300014: typeWriterSheet_7
+    21300016: typeWriterSheet_8
+    21300018: typeWriterSheet_9
+    21300020: typeWriterSheet_10
+    21300022: typeWriterSheet_11
+    21300024: typeWriterSheet_12
+    21300026: typeWriterSheet_13
+    21300028: typeWriterSheet_14
+    21300030: typeWriterSheet_15
+    21300032: typeWriterSheet_16
+    21300034: typeWriterSheet_17
+    21300036: typeWriterSheet_18
+    21300038: typeWriterSheet_19
+    21300040: typeWriterSheet_20
+    21300042: typeWriterSheet_21
+    21300044: typeWriterSheet_22
+    21300046: typeWriterSheet_23
+    21300048: typeWriterSheet_24
+    21300050: typeWriterSheet_25
+    21300052: typeWriterSheet_26
+    21300054: typeWriterSheet_27
+    21300056: typeWriterSheet_28
+    21300058: typeWriterSheet_29
+    21300060: typeWriterSheet_30
+    21300062: typeWriterSheet_31
+    21300064: typeWriterSheet_32
+    21300066: typeWriterSheet_33
+    21300068: typeWriterSheet_34
+    21300070: typeWriterSheet_35
+    21300072: typeWriterSheet_36
+    21300074: typeWriterSheet_37
+    21300076: typeWriterSheet_38
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 0
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: typeWriterSheet_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1328
+        width: 773
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_1
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1585
+        width: 636
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_2
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1332
+        width: 657
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 800
+        width: 789
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_4
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 772
+        width: 693
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 530
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 530
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_7
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 530
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_8
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 530
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_9
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 528
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_10
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 530
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_11
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 530
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_12
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 530
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_13
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 530
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_14
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 530
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_15
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 157
+        width: 680
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_16
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 471
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_17
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 471
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_18
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 471
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_19
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 471
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_20
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 471
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_21
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 471
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_22
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 471
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_23
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 471
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_24
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 471
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_25
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 411
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_26
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 411
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_27
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 411
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_28
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 411
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_29
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 411
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_30
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 411
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_31
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 411
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_32
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 411
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_33
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 85
+        width: 28
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_34
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 89
+        width: 33
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_35
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 88
+        width: 31
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_36
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 4
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_37
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: typeWriterSheet_38
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 0
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
