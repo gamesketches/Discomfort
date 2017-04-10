@@ -28,7 +28,7 @@ public class TouchTypistManager : MonoBehaviour {
 	}
 
 	Queue<Phrase> phrases;
-	public Text timer;
+	GameObject timer;
 	public Text currentText;
 	public Text leftHoldText;
 	public Text rightHoldText;
@@ -60,8 +60,7 @@ public class TouchTypistManager : MonoBehaviour {
 
 		audioSource = GetComponent<AudioSource>();
 		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
-		timer.text = "";
-		timer.color = Color.clear;
+		timer = GameObject.Find("clockLeg");
 
 		GameObject logo = GameObject.Find("Logo");
 		GameObject logoText = GameObject.Find("LogoText");
@@ -70,7 +69,6 @@ public class TouchTypistManager : MonoBehaviour {
 			yield return null;
 		}
 
-		timer.color = Color.black;
 		logo.SetActive(false);
 		logoText.SetActive(false);
 		currentText.enabled = true;
@@ -79,19 +77,18 @@ public class TouchTypistManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		currentTime -= Time.deltaTime;
+		timer.transform.localRotation = Quaternion.Euler(0, 0, 180 - (6 * currentTime));
 		if(currentTime < 0) {
 			currentTime = 0;
 			currentText.rectTransform.localPosition  = Vector3.zero;
 			currentText.text = "OUT OF TIME";
 			leftHoldText.color = Color.clear;
 			rightHoldText.color = Color.clear;
-			timer.text = "0";
 			StartCoroutine(ResetGame());
 		}
 		else if(KeysStillHeld()){
 			InputLetter();
 		}
-		timer.text = currentTime.ToString("F");
 	}
 
 	void InputLetter() {
@@ -143,10 +140,11 @@ public class TouchTypistManager : MonoBehaviour {
 			paperSprite.transform.position = Vector3.Lerp(startPos, endPos, t);
 			yield return null;
 		}
-		timer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
+		SpriteRenderer timerRenderer = timer.GetComponent<SpriteRenderer>();
+		timerRenderer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
 		StartCoroutine(AddTime(nextPhrase.timeBonus));
 		//StartCoroutine(MoveText(currentText, offset));
-		timer.color = new Color(255f / 255f, 101f / 255f, 112f/ 255f);
+		timerRenderer.color = Color.black;
 		Text oldText = Instantiate(currentText, currentText.transform.parent) as Text;
 		oldText.rectTransform.localPosition = currentPhrase.position;
 		oldText.tag = "FinishedText";
@@ -259,7 +257,7 @@ public class TouchTypistManager : MonoBehaviour {
 		float endTime = currentTime + timeBonus; 
 		for(float t = 0; t < 1; t += Time.deltaTime) {
 			currentTime = Mathf.Lerp(startTime, endTime, t);
-			timer.text = currentTime.ToString("F");
+			timer.transform.localRotation = Quaternion.Euler(0, 0, 180 - (6 * currentTime));
 			yield return null;
 		}
 	}
