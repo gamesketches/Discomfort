@@ -89,7 +89,6 @@ public class TouchTypistManager : MonoBehaviour {
 		timer.transform.localRotation = Quaternion.Euler(0, 0, 180 - (6 * currentTime));
 		if(currentTime < 0) {
 			currentTime = 0;
-			currentText.rectTransform.localPosition  = Vector3.zero;
 			currentText.text = "OUT OF TIME";
 			leftHoldText.color = Color.clear;
 			rightHoldText.color = Color.clear;
