@@ -58,8 +58,8 @@ public class TouchTypistManager : MonoBehaviour {
 		currentPhrase = phrases.Dequeue();
 		currentText.text = currentPhrase.textContent;
 		currentText.enabled = false;
-		leftHoldText.text = currentPhrase.leftHeldKey.ToString();
-		rightHoldText.text = currentPhrase.rightHeldKey.ToString();
+		leftHoldText.text = "";
+		rightHoldText.text = "";
 		currentTime += currentPhrase.timeBonus;
 		currentPhraseIndex = 0;
 
@@ -74,7 +74,9 @@ public class TouchTypistManager : MonoBehaviour {
 			yield return null;
 		}
 
-		OnBoardEvent();
+		if(OnBoardEvent != null)
+			OnBoardEvent();
+		else Debug.Log("what");
 
 		//logo.SetActive(false);
 		logoText.SetActive(false);
@@ -142,51 +144,50 @@ public class TouchTypistManager : MonoBehaviour {
 		Phrase nextPhrase = phrases.Peek();
 		currentPhrase.leftHeldKey = nextPhrase.leftHeldKey;
 		currentPhrase.rightHeldKey = nextPhrase.rightHeldKey;
-		leftHoldText.text = currentPhrase.leftHeldKey.ToString();
-		rightHoldText.text = currentPhrase.rightHeldKey.ToString();
+		leftHoldText.text = HeldKeyText(currentPhrase.leftHeldKey);
+		rightHoldText.text = HeldKeyText(currentPhrase.rightHeldKey);
 		audioSource.clip = Resources.Load<AudioClip>("Sounds/slide");
 		audioSource.Play();
-		Vector3 offset = currentPhrase.position - currentText.rectTransform.localPosition;
+		Vector3 offset;
+		if(nextPhrase.rightHeldKey == KeyCode.None) {
+			offset = new Vector3(0, 10);
+		}
+		else {
+			offset = new Vector3(0, 20);
+		}
 		Vector3 startPos = paperSprite.transform.position;
 		Vector3 endPos = Vector3.zero + new Vector3(0, paperSprite.transform.position.y, paperSprite.transform.position.z);
-		for(float t = 0; t < 1; t += Time.deltaTime) {
-			paperSprite.transform.position = Vector3.Lerp(startPos, endPos, t);
+		for(float t = 0; t < audioSource.clip.length; t += Time.deltaTime) {
+			paperSprite.transform.position = Vector3.Lerp(startPos, endPos, t / audioSource.clip.length);
 			currentTime += Time.deltaTime;
 			yield return null;
 		}
 		SpriteRenderer timerRenderer = timer.GetComponent<SpriteRenderer>();
 		timerRenderer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
 		StartCoroutine(AddTime(nextPhrase.timeBonus));
-		//StartCoroutine(MoveText(currentText, offset));
 		timerRenderer.color = Color.black;
-		Text oldText = Instantiate(currentText, currentText.transform.parent) as Text;
-		oldText.rectTransform.localPosition = currentPhrase.position;
-		oldText.tag = "FinishedText";
-		oldText.color = Color.black;
-		currentText.rectTransform.Translate(-offset / 2);
-		StartCoroutine(MoveText(oldText, offset));
+		ShedText(currentText);
+		currentText.rectTransform.transform.Translate(-offset / 2);
+		foreach(GameObject text in GameObject.FindGameObjectsWithTag("FinishedText")) {
+				StartCoroutine(MoveText(text.GetComponent<Text>(), new Vector3(0, 20, 0)));
+			}
 		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
 		currentPhrase = phrases.Dequeue();
 		currentText.text = currentPhrase.textContent;
-		yield return StartCoroutine(MoveText(currentText, offset));
-		leftHoldText.text = currentPhrase.leftHeldKey.ToString();
-		rightHoldText.text = currentPhrase.rightHeldKey.ToString();
-		//currentTime += currentPhrase.timeBonus;
+		yield return StartCoroutine(MoveText(currentText, offset / 2));
+		leftHoldText.text = HeldKeyText(currentPhrase.leftHeldKey);
+		rightHoldText.text = HeldKeyText(currentPhrase.rightHeldKey);
+		currentTime += currentPhrase.timeBonus;
 		currentPhraseIndex = 0;
-		currentText.rectTransform.localPosition = currentPhrase.position + new Vector3(0, 0, 0);
-
-		foreach(GameObject text in GameObject.FindGameObjectsWithTag("FinishedText")) {
-				StartCoroutine(MoveText(text.GetComponent<Text>(), new Vector3(0, 200, 0)));
-			}
 		}
 
 	IEnumerator MoveText(Text theText, Vector3 offset) {
 		float t = 0;
-		Vector3 startPos = theText.rectTransform.localPosition;
+		Vector3 startPos = theText.rectTransform.transform.position;
 		Vector3 endPos = startPos + offset;
 		while(t < 1) {
 			currentTime += Time.deltaTime;
-			theText.rectTransform.localPosition = Vector3.Lerp(startPos, endPos, t);
+			theText.rectTransform.transform.position = Vector3.Lerp(startPos, endPos, t);
 			t += Time.deltaTime;
 			yield return null;
 		}
@@ -278,7 +279,21 @@ public class TouchTypistManager : MonoBehaviour {
 	}
 
 	IEnumerator ResetGame() {
+		Debug.Log("Resetting");
 		yield return new WaitForSeconds(4);
 		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+	}
+
+	void ShedText(Text copyText) {
+		Text oldText = Instantiate(copyText, copyText.transform.parent) as Text;
+		oldText.tag = "FinishedText";
+		oldText.color = Color.black;
+	}
+
+	string HeldKeyText(KeyCode heldKey) {
+		if(heldKey == KeyCode.None) {
+			return "";
+		}
+		else return heldKey.ToString();
 	}
 }

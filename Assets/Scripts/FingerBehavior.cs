@@ -90,7 +90,7 @@ public class FingerBehavior : MonoBehaviour {
 		lineRenderer.GetPositions(positions);
 		float distancePerPoint = (float)fingerAnimationCurve.keys[fingerAnimationCurve.keys.Length - 1].time / (float)lineRenderer.numPositions;
 		for(int k = 0; k < lineRenderer.numPositions; k++){	
-			lineRenderer.SetPosition(k, new Vector3(distancePerPoint * k, fingerAnimationCurve.Evaluate(distancePerPoint * k)));
+			lineRenderer.SetPosition(k, new Vector3(distancePerPoint * k, fingerAnimationCurve.Evaluate(distancePerPoint * k), -1));
 		}
 		tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(lineRenderer.GetPosition(lineRenderer.numPositions - 1));
 		//tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.numPositions - 2) - position)));
