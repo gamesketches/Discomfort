@@ -27,6 +27,9 @@ public class TouchTypistManager : MonoBehaviour {
 		}
 	}
 
+	public delegate void OnBoardUI();
+	public static event OnBoardUI OnBoardEvent;
+
 	Queue<Phrase> phrases;
 	GameObject timer;
 	public Text currentText;
@@ -40,12 +43,14 @@ public class TouchTypistManager : MonoBehaviour {
 	int currentPhraseIndex;
 	float currentTime = 1;
 	AudioSource audioSource;
+	Transform[] keys;
 
 	HighScoreManager highScoreList;
 
 	// Use this for initialization
 	IEnumerator Start () {
 		SetUpFingers();
+		keys = GameObject.Find("Keys").GetComponentsInChildren<Transform>();
 		paperSprite = GameObject.Find("Paper").GetComponent<RectTransform>();
 		highScoreList = GetComponent<HighScoreManager>();
 		SetUpPhrases();
@@ -69,7 +74,9 @@ public class TouchTypistManager : MonoBehaviour {
 			yield return null;
 		}
 
-		logo.SetActive(false);
+		OnBoardEvent();
+
+		//logo.SetActive(false);
 		logoText.SetActive(false);
 		currentText.enabled = true;
 	}
@@ -94,7 +101,7 @@ public class TouchTypistManager : MonoBehaviour {
 	void InputLetter() {
 		if(Input.GetKeyDown(CurrentCharacter())) {
 			currentPhraseIndex += 1;
-			MoveFinger();
+			MoveFinger(CurrentCharacter());
 			paperSprite.Translate(offsetOnType, 0, 0);
 			if(currentPhraseIndex == currentPhrase.textContent.Length) {
 				SwitchPhrase();
@@ -114,9 +121,16 @@ public class TouchTypistManager : MonoBehaviour {
 
 	}
 
-	void MoveFinger() {
+	void MoveFinger(string letter) {
 		FingerBehavior curFinger = (FingerBehavior)fingers.Current;
-		curFinger.MoveToTarget(new Vector3(Random.Range(-3f, 2.5f), Random.Range(-2.6f, -4.5f)));
+		Vector3 position = new Vector3(Random.Range(-3f, 2.5f), Random.Range(-2.6f, -4.5f));
+		foreach(Transform key in keys) {
+			if(key.name == letter.ToLower()) {
+				position = key.position;
+				break;
+			}
+		}
+		curFinger.MoveToTarget(position);
 		if(!fingers.MoveNext()) {
 			fingers.Reset();
 			fingers.MoveNext();
@@ -124,7 +138,6 @@ public class TouchTypistManager : MonoBehaviour {
 	}
 
 	IEnumerator FinishPhrase() {
-		Debug.Log("Finishing text");
 		currentText.text = string.Concat("<color=black>", currentPhrase.textContent, "</color>");
 		Phrase nextPhrase = phrases.Peek();
 		currentPhrase.leftHeldKey = nextPhrase.leftHeldKey;
@@ -138,9 +151,11 @@ public class TouchTypistManager : MonoBehaviour {
 		Vector3 endPos = Vector3.zero + new Vector3(0, paperSprite.transform.position.y, paperSprite.transform.position.z);
 		for(float t = 0; t < 1; t += Time.deltaTime) {
 			paperSprite.transform.position = Vector3.Lerp(startPos, endPos, t);
+			currentTime += Time.deltaTime;
 			yield return null;
 		}
 		SpriteRenderer timerRenderer = timer.GetComponent<SpriteRenderer>();
+		Debug.Log(timerRenderer);
 		timerRenderer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
 		StartCoroutine(AddTime(nextPhrase.timeBonus));
 		//StartCoroutine(MoveText(currentText, offset));
@@ -171,6 +186,7 @@ public class TouchTypistManager : MonoBehaviour {
 		Vector3 startPos = theText.rectTransform.localPosition;
 		Vector3 endPos = startPos + offset;
 		while(t < 1) {
+			currentTime += Time.deltaTime;
 			theText.rectTransform.localPosition = Vector3.Lerp(startPos, endPos, t);
 			t += Time.deltaTime;
 			yield return null;

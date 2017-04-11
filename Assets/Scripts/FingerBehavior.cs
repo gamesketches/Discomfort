@@ -57,7 +57,7 @@ public class FingerBehavior : MonoBehaviour {
 
 		fingerAnimationCurve.AddKey(new Keyframe(0, 0));
 		Vector2[] colliderPoints = new Vector2[transform.childCount];
-		for(int i = 1; i < transform.childCount; i++) {
+		for(int i = 1; i < transform.childCount + 1; i++) {
 			fingerAnimationCurve.AddKey(new Keyframe(transform.GetChild(i - 1).localPosition.x , transform.GetChild(i - 1).localPosition.y));
 			colliderPoints[i - 1] = new Vector2(transform.GetChild(i - 1).localPosition.x, transform.GetChild(i - 1).localPosition.y);
 		}
