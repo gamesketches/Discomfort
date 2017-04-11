@@ -29,9 +29,6 @@ public class UISlideIn : MonoBehaviour {
 	IEnumerator SlideIn() {
 		RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
 		Vector3 startPosition = rectTransform.transform.position;
-		Debug.Log(gameObject.name);
-		Debug.Log(startPosition);
-		Debug.Log(targetPosition);
 		targetPosition.z = startPosition.z;
 		for(float t = 0; t < lerpTime; t += Time.deltaTime) {
 			rectTransform.transform.position = Vector3.Lerp(startPosition, targetPosition, t / lerpTime);

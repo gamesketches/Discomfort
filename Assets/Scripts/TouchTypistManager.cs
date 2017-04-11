@@ -155,7 +155,6 @@ public class TouchTypistManager : MonoBehaviour {
 			yield return null;
 		}
 		SpriteRenderer timerRenderer = timer.GetComponent<SpriteRenderer>();
-		Debug.Log(timerRenderer);
 		timerRenderer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
 		StartCoroutine(AddTime(nextPhrase.timeBonus));
 		//StartCoroutine(MoveText(currentText, offset));
