@@ -256,11 +256,11 @@ public class TouchTypistManager : MonoBehaviour {
 		phrases = new Queue<Phrase>();
 		phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 14, Vector2.zero, null));
 		phrases.Enqueue(new Phrase ("And Mind The Timer", KeyCode.None, KeyCode.None, 4, Vector2.zero, null));
-		phrases.Enqueue(new Phrase("Blue Letters Must Be Held", KeyCode.None, KeyCode.K, 4, Vector2.zero, null));
+		phrases.Enqueue(new Phrase("Blue letters must be held", KeyCode.None, KeyCode.K, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Letting go is starting over", KeyCode.None, KeyCode.J, 8, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Now it begins", KeyCode.R, KeyCode.U, 2, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("The man is also filial piety", KeyCode.W, KeyCode.V,4, Vector3.zero, null));
-		phrases.Enqueue(new Phrase("And Good Guilty Of those who", KeyCode.R, KeyCode.Z, 4, Vector3.zero, null));
+		phrases.Enqueue(new Phrase("And good guilty Of those who", KeyCode.R, KeyCode.Z, 4, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("fresh bad guilty", KeyCode.X, KeyCode.P, 7, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("and good for chaos", KeyCode.M, KeyCode.K, 6, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("not the there", KeyCode.S, KeyCode.J, 2, Vector3.zero, null));
