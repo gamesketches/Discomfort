@@ -92,6 +92,7 @@ public class TouchTypistManager : MonoBehaviour {
 			currentText.text = "OUT OF TIME";
 			leftHoldText.color = Color.clear;
 			rightHoldText.color = Color.clear;
+		
 			StartCoroutine(ResetGame());
 		}
 		else if(KeysStillHeld()){
@@ -104,6 +105,7 @@ public class TouchTypistManager : MonoBehaviour {
 			currentPhraseIndex += 1;
 			MoveFinger(CurrentCharacter());
 			paperSprite.Translate(offsetOnType, 0, 0);
+			paperSprite.parent.Translate(offsetOnType / 1.2f, 0, 0);
 			if(currentPhraseIndex == currentPhrase.textContent.Length) {
 				SwitchPhrase();
 			}
@@ -154,6 +156,8 @@ public class TouchTypistManager : MonoBehaviour {
 		else {
 			offset = new Vector3(0, 20);
 		}
+		RectTransform paperShadow = GameObject.Find("paperShadow").GetComponent<RectTransform>();
+		Vector3 shadowStart = paperShadow.transform.position;
 		Vector3 startPos = paperSprite.transform.position;
 		Vector3 endPos = Vector3.zero + new Vector3(0, paperSprite.transform.position.y, paperSprite.transform.position.z);
 		for(float t = 0; t < audioSource.clip.length; t += Time.deltaTime) {
@@ -253,7 +257,7 @@ public class TouchTypistManager : MonoBehaviour {
 
 	void SetUpPhrases() {
 		phrases = new Queue<Phrase>();
-		phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 14, Vector2.zero, null));
+		phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 1, Vector2.zero, null));
 		phrases.Enqueue(new Phrase ("And Mind The Timer", KeyCode.None, KeyCode.None, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Blue letters must be held", KeyCode.None, KeyCode.K, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Letting go is starting over", KeyCode.None, KeyCode.J, 8, Vector2.zero, null));

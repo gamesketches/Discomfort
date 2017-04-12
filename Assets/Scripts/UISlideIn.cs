@@ -47,4 +47,8 @@ public class UISlideIn : MonoBehaviour {
 		}
 		transform.position = targetPosition;
 	}
+
+	void OnDestroy() {
+		TouchTypistManager.OnBoardEvent -= StartSlideIn;
+	}
 }
