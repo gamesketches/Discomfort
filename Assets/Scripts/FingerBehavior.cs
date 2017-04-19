@@ -88,7 +88,9 @@ public class FingerBehavior : MonoBehaviour {
 		//while(i < fingerDensity) {
 		Vector3[] positions = new Vector3[lineRenderer.numPositions];
 		lineRenderer.GetPositions(positions);
-		float distancePerPoint = (float)fingerAnimationCurve.keys[fingerAnimationCurve.keys.Length - 1].time / (float)lineRenderer.numPositions;
+		float distancePerPoint = (float)fingerAnimationCurve.keys[fingerAnimationCurve.keys.Length - 1].time / (float)(lineRenderer.numPositions - 1);
+		Debug.Log(distancePerPoint);
+		Debug.Log(fingerAnimationCurve.keys[fingerAnimationCurve.keys.Length - 1].time);
 		for(int k = 0; k < lineRenderer.numPositions; k++){	
 			lineRenderer.SetPosition(k, new Vector3(distancePerPoint * k, fingerAnimationCurve.Evaluate(distancePerPoint * k), -1));
 		}
@@ -124,4 +126,5 @@ public class FingerBehavior : MonoBehaviour {
 		yield return new WaitForSeconds(0.1f);
 		tip.MovePosition(tip.transform.position + (Vector3.up * 0.5f));
 	}
+
 }
