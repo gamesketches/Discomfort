@@ -38,6 +38,8 @@ public class TouchTypistManager : MonoBehaviour {
 	RectTransform paperSprite;
 	IEnumerator fingers;
 	Vector3[] keyPositions;
+	Vector3 paperShadowStartPos;
+	Vector3 paperLocalPos;
 	public float offsetOnType;
 	Phrase currentPhrase;
 	int currentPhraseIndex;
@@ -52,6 +54,8 @@ public class TouchTypistManager : MonoBehaviour {
 		SetUpFingers();
 		keys = GameObject.Find("Keys").GetComponentsInChildren<Transform>();
 		paperSprite = GameObject.Find("Paper").GetComponent<RectTransform>();
+		paperLocalPos = paperSprite.localPosition;
+		paperShadowStartPos = paperSprite.transform.parent.gameObject.GetComponent<UISlideIn>().targetPosition;
 		highScoreList = GetComponent<HighScoreManager>();
 		SetUpPhrases();
 
@@ -74,13 +78,12 @@ public class TouchTypistManager : MonoBehaviour {
 			yield return null;
 		}
 
-		if(OnBoardEvent != null)
-			OnBoardEvent();
-		else Debug.Log("what");
+		OnBoardEvent();
 
 		//logo.SetActive(false);
 		logoText.SetActive(false);
 		currentText.enabled = true;
+
 	}
 	
 	// Update is called once per frame
@@ -102,8 +105,8 @@ public class TouchTypistManager : MonoBehaviour {
 
 	void InputLetter() {
 		if(Input.GetKeyDown(CurrentCharacter())) {
-			currentPhraseIndex += 1;
 			MoveFinger(CurrentCharacter());
+			currentPhraseIndex += 1;
 			paperSprite.Translate(offsetOnType, 0, 0);
 			paperSprite.parent.Translate(offsetOnType / 1.2f, 0, 0);
 			if(currentPhraseIndex == currentPhrase.textContent.Length) {
@@ -121,12 +124,16 @@ public class TouchTypistManager : MonoBehaviour {
 		if(phrases.Count >= 1) {
 			StartCoroutine(FinishPhrase());
 		}
+		else {
+			StartCoroutine(ResetGame());
+		}
 
 	}
 
 	void MoveFinger(string letter) {
 		FingerBehavior curFinger = (FingerBehavior)fingers.Current;
 		Vector3 position = new Vector3(Random.Range(-3f, 2.5f), Random.Range(-2.6f, -4.5f));
+		Debug.Log("RandomPosition: " + position.ToString());
 		foreach(Transform key in keys) {
 			if(key.name == letter.ToLower()) {
 				position = key.position;
@@ -151,17 +158,18 @@ public class TouchTypistManager : MonoBehaviour {
 		audioSource.Play();
 		Vector3 offset;
 		if(nextPhrase.rightHeldKey == KeyCode.None) {
-			offset = new Vector3(0, 10);
+			offset = new Vector3(0, 100);
 		}
 		else {
-			offset = new Vector3(0, 20);
+			offset = new Vector3(0, 200);
 		}
 		RectTransform paperShadow = GameObject.Find("paperShadow").GetComponent<RectTransform>();
 		Vector3 shadowStart = paperShadow.transform.position;
-		Vector3 startPos = paperSprite.transform.position;
-		Vector3 endPos = Vector3.zero + new Vector3(0, paperSprite.transform.position.y, paperSprite.transform.position.z);
+		Vector3 startPos = paperSprite.transform.parent.position;
+		Vector3 endPos = paperShadowStartPos;//Vector3.zero + new Vector3(0, paperSprite.transform.position.y, paperSprite.transform.position.z);
 		for(float t = 0; t < audioSource.clip.length; t += Time.deltaTime) {
-			paperSprite.transform.position = Vector3.Lerp(startPos, endPos, t / audioSource.clip.length);
+			paperSprite.transform.localPosition = Vector3.Lerp(paperSprite.transform.localPosition, paperLocalPos, t / audioSource.clip.length);
+			paperSprite.transform.parent.position = Vector3.Lerp(startPos, endPos, t / audioSource.clip.length);
 			currentTime += Time.deltaTime;
 			yield return null;
 		}
@@ -172,7 +180,7 @@ public class TouchTypistManager : MonoBehaviour {
 		ShedText(currentText);
 		currentText.rectTransform.transform.Translate(-offset / 2);
 		foreach(GameObject text in GameObject.FindGameObjectsWithTag("FinishedText")) {
-				StartCoroutine(MoveText(text.GetComponent<Text>(), new Vector3(0, 20, 0)));
+				StartCoroutine(MoveText(text.GetComponent<Text>(), offset));
 			}
 		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
 		currentPhrase = phrases.Dequeue();
@@ -257,7 +265,7 @@ public class TouchTypistManager : MonoBehaviour {
 
 	void SetUpPhrases() {
 		phrases = new Queue<Phrase>();
-		phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 1, Vector2.zero, null));
+		phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 14, Vector2.zero, null));
 		phrases.Enqueue(new Phrase ("And Mind The Timer", KeyCode.None, KeyCode.None, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Blue letters must be held", KeyCode.None, KeyCode.K, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Letting go is starting over", KeyCode.None, KeyCode.J, 8, Vector2.zero, null));
@@ -269,6 +277,7 @@ public class TouchTypistManager : MonoBehaviour {
 		phrases.Enqueue(new Phrase("not the there", KeyCode.S, KeyCode.J, 2, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("Gentleman of this", KeyCode.X, KeyCode.R, 4, Vector3.zero, null));
 		phrases.Enqueue(new Phrase ("the legislation and students", KeyCode.Q, KeyCode.V, 9, Vector2.zero, null));
+		phrases.Enqueue(new Phrase("You Win!", KeyCode.None, KeyCode.None, 0, Vector2.zero, null));
 	}
 
 	IEnumerator AddTime(float timeBonus) {
