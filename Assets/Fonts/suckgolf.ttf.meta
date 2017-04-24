@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 50a0d2e8bf0d74eae84236e6ceb8fed3
+timeCreated: 1493006408
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: I suck at golf
+  fontNames:
+  - I suck at golf
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
