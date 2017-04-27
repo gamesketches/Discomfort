@@ -27,6 +27,7 @@ public class SquareTransition : MonoBehaviour {
 	}
 
 	IEnumerator SwitchRoom(GameObject player) {
+		player.tag = "Untagged";
 		Vector3 cameraVector;
 		switch(transferDirection) {
 			case TransferDirection.Up:
@@ -53,5 +54,6 @@ public class SquareTransition : MonoBehaviour {
 			player.transform.position = Vector3.Lerp(playerStartPos, playerTransferVector, t / transitionTime);
 			yield return null;
 		}
+		player.tag = "Player";
 	}
 }
