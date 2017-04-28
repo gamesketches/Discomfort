@@ -34,6 +34,7 @@ public class SquareTransition : MonoBehaviour {
 
 	IEnumerator SwitchRoom(GameObject player) {
 		player.tag = "Untagged";
+		player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		Vector3 cameraVector;
 		switch(transferDirection) {
 			case TransferDirection.Up:
@@ -55,11 +56,16 @@ public class SquareTransition : MonoBehaviour {
 		}
 		Vector3 startPos = Camera.main.transform.position;
 		Vector3 playerStartPos = player.transform.position;
-		for(float t = 0; t < transitionTime; t += Time.deltaTime) {
+		Quaternion startRotation = Camera.main.transform.rotation;
+		Quaternion targetRot = Quaternion.Euler(0, 0, targetRotation);
+		for(float t = 0; t <= transitionTime; t += Time.deltaTime) {
+			Camera.main.transform.rotation = Quaternion.Slerp(startRotation, targetRot, t / transitionTime);
 			Camera.main.transform.position = Vector3.Slerp(startPos, startPos + cameraVector, t / transitionTime);
 			player.transform.position = Vector3.Lerp(playerStartPos, playerTransferVector, t / transitionTime);
 			yield return null;
 		}
+		Camera.main.transform.rotation = targetRot;
+		Camera.main.transform.position = startPos + cameraVector;
 		player.tag = "Player";
 	}
 
