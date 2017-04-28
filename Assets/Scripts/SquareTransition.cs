@@ -10,9 +10,13 @@ public class SquareTransition : MonoBehaviour {
 	public TransferDirection transferDirection;
 	public float transitionTime;
 	public Vector3 playerTransferVector;
+	public float targetRotation;
+	public WaterBehavior roomHole;
+	public WaterBehavior neighborHole;
 	// Use this for initialization
 	void Start () {
-		
+		SetRoomHole(false);
+		SetNeighborHole(false);
 	}
 	
 	// Update is called once per frame
@@ -22,6 +26,8 @@ public class SquareTransition : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.tag == "Player") {
+			SetRoomHole(false);
+			SetNeighborHole(true);
 			StartCoroutine(SwitchRoom(other.gameObject));
 		}
 	}
@@ -55,5 +61,17 @@ public class SquareTransition : MonoBehaviour {
 			yield return null;
 		}
 		player.tag = "Player";
+	}
+
+	void SetRoomHole(bool state) {
+		if(roomHole != null) {
+			roomHole.sucking = state;
+		}
+	}
+
+	void SetNeighborHole(bool state) {
+		if(neighborHole != null) {
+			neighborHole.sucking = state;
+		}
 	}
 }

@@ -8,6 +8,7 @@ public class AsokobanPlayer : MonoBehaviour {
 	Animator animationController;
 	SpriteRenderer renderer;
 	BoxCollider2D collider;
+	public float speed;
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
@@ -21,7 +22,7 @@ public class AsokobanPlayer : MonoBehaviour {
 		float hori = Input.GetAxis("Horizontal");
 		float vert = Input.GetAxis("Vertical");
 
-		rigidBody.MovePosition(rigidBody.position + (new Vector2(hori, vert) * Time.deltaTime));
+		rigidBody.MovePosition(rigidBody.position + (new Vector2(hori, vert) * speed * Time.deltaTime));
 		animationController.SetInteger("XMovement", (int)hori);
 		animationController.SetInteger("YMovement", (int)vert);
 		if(hori > 0) {
