@@ -50,8 +50,8 @@ public class MenuvaniaCursor : MonoBehaviour {
 				focusDepth++;
 				break;
 			case 1:
-				//focusedItem = focusedItem.gameObject.GetComponent<Dropdown>().options[0];
-				//focusDepth++;
+				focusedItem = focusedItem.gameObject.GetComponent<DrawerBehaviour>().options[0];
+				focusDepth++;
 				break;
 			case 2:
 				return;

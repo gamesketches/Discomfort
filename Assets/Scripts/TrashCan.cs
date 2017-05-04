@@ -5,9 +5,11 @@ using UnityEngine;
 public class TrashCan : MonoBehaviour {
 
 
-	GameObject lid;	
+	GameObject lid;
+	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource>();
 		lid = transform.GetChild(0).gameObject;
 		lid.SetActive(false);
 	}
@@ -26,5 +28,6 @@ public class TrashCan : MonoBehaviour {
 	void ReceivePoop(GameObject obj) {
 		Destroy(obj);
 		lid.SetActive(true);
+		audioSource.Play();
 	}
 }

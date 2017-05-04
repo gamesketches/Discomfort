@@ -37,6 +37,5 @@ public class DrawerBehaviour : MonoBehaviour {
 			transform.position = Vector3.Slerp(currentPosition, destination, t / movementTime);
 			yield return null;
 		}
-		Debug.Log("done moving");
 	}
 }
