@@ -10,6 +10,7 @@ public class AsokobanPlayer : MonoBehaviour {
 	BoxCollider2D collider;
 	public float speed;
 	AudioSource audioSource;
+	AudioSource footSteps;
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
@@ -17,12 +18,21 @@ public class AsokobanPlayer : MonoBehaviour {
 		renderer = GetComponent<SpriteRenderer>();
 		collider = GetComponent<BoxCollider2D>();
 		audioSource = GetComponent<AudioSource>();
+		footSteps = GetComponents<AudioSource>()[1];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float hori = Input.GetAxis("Horizontal");
 		float vert = Input.GetAxis("Vertical");
+
+		if((hori != 0 || vert != 0) && !footSteps.isPlaying) {
+			footSteps.Play();
+		}
+		else if(hori == 0 && vert == 0) {
+			footSteps.Stop();
+		}
+
 
 		rigidBody.MovePosition(rigidBody.position + (new Vector2(hori, vert) * speed * Time.deltaTime));
 		animationController.SetInteger("XMovement", (int)Input.GetAxisRaw("Horizontal"));
