@@ -20,7 +20,7 @@ public class DrawerBehaviour : MonoBehaviour {
 	}
 
 	public void ToggleDrawer() {
-		if(toggled) {
+		if(!toggled) {
 			StartCoroutine(ChangePosition(startPosition + new Vector3(0, movement, 0)));	
 		}
 		else {

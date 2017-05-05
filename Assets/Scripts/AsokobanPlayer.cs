@@ -32,7 +32,9 @@ public class AsokobanPlayer : MonoBehaviour {
 		else if(hori == 0 && vert == 0) {
 			footSteps.Stop();
 		}
-
+		if(Input.GetKeyDown(KeyCode.R)) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+		}
 
 		rigidBody.MovePosition(rigidBody.position + (new Vector2(hori, vert) * speed * Time.deltaTime));
 		animationController.SetInteger("XMovement", (int)Input.GetAxisRaw("Horizontal"));
