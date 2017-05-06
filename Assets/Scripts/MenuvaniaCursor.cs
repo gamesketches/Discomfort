@@ -115,11 +115,11 @@ public class MenuvaniaCursor : MonoBehaviour {
 				break;
 			case FocusDepth.Options:
 				Transform[] verbs = focusedItem.parent.gameObject.GetComponent<FolderBehavior>().options;
-				if(focusedItem.GetSiblingIndex() == verbs.Length - 1) {
-					focusedItem = verbs[0];
+				if(focusedItem.GetSiblingIndex() == 1) {
+					focusedItem = verbs[verbs.Length - 1];
 				}
 				else {
-					focusedItem = verbs[focusedItem.GetSiblingIndex() + 1];
+					focusedItem = verbs[focusedItem.GetSiblingIndex() - 2];
 				}
 				break;
 			default:
@@ -142,11 +142,11 @@ public class MenuvaniaCursor : MonoBehaviour {
 				break;
 			case FocusDepth.Options:
 				Transform[] verbs = focusedItem.parent.gameObject.GetComponent<FolderBehavior>().options;
-				if(focusedItem.GetSiblingIndex() == 0) {
-					focusedItem = verbs[verbs.Length - 1];
+				if(focusedItem.GetSiblingIndex() == verbs.Length) {
+					focusedItem = verbs[0];
 				}
 				else {
-					focusedItem = verbs[focusedItem.GetSiblingIndex() - 1];
+					focusedItem = verbs[focusedItem.GetSiblingIndex()];
 				}
 				break;
 			default:
@@ -168,7 +168,6 @@ public class MenuvaniaCursor : MonoBehaviour {
 				focusedItem = drawers[currentDrawer].transform;
 				break;
 		}
-		Debug.Log(focusedItem.name);
 	}
 
 	void RepositionCursor() {
