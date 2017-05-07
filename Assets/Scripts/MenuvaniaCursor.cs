@@ -25,7 +25,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 		if(InputManager.ActiveDevice.Action1.WasPressed || Input.GetKeyDown(KeyCode.Space)) {
 			ConfirmButton();
 		}
-		else if(InputManager.ActiveDevice.Action3.WasPressed || Input.GetKeyDown(KeyCode.Q)) {
+		else if(InputManager.ActiveDevice.Action2.WasPressed || Input.GetKeyDown(KeyCode.Q)) {
 			CancelButton();
 		}
 		else if(InputManager.ActiveDevice.DPadLeft.WasPressed || Input.GetKeyDown(KeyCode.LeftArrow)) {
@@ -168,6 +168,8 @@ public class MenuvaniaCursor : MonoBehaviour {
 				focusedItem = drawers[currentDrawer].transform;
 				break;
 		}
+
+		Debug.Log(focusedItem.name);
 	}
 
 	void RepositionCursor() {
