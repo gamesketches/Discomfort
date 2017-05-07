@@ -11,6 +11,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 	FocusDepth focusDepth;
 	int currentDrawer;
 	public Transform focusedItem;
+	GameObject player;
 	// Use this for initialization
 	void Start () {
 		drawers = GameObject.FindGameObjectsWithTag("Drawer");
@@ -18,6 +19,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 		focusedItem = drawers[currentDrawer].transform;
 		RepositionCursor();
 		focusDepth = FocusDepth.Drawer;
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -50,10 +52,11 @@ public class MenuvaniaCursor : MonoBehaviour {
 				focusDepth++;
 				break;
 			case FocusDepth.Files:
+				focusedItem.GetComponent<FolderBehavior>().FanOut();
 				focusDepth++;
 				break;
 			case FocusDepth.Options:
-				Debug.Log(focusedItem.gameObject.GetComponentInChildren<Text>().text);
+				player.GetComponent<MenuvaniaPlayer>().PerformAction(focusedItem.gameObject.GetComponentInChildren<Text>().text);
 				return;
 			default:
 				focusDepth++;
@@ -71,6 +74,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 				focusDepth--;
 				break;
 			case FocusDepth.Options:
+				focusedItem.parent.gameObject.GetComponent<FolderBehavior>().FanIn();
 				focusDepth--;
 				break;
 			default:
