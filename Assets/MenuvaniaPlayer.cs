@@ -17,7 +17,7 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	void Start () {
 		checkpoint = transform.position;
 		animator = GetComponent<Animator>();
-		direction = -1;
+		direction = 1;
 		rigidBody = GetComponent<Rigidbody2D>();
 		movementSpeed = 0;
 		hitbox = transform.GetChild(0).gameObject;
@@ -88,7 +88,7 @@ public class MenuvaniaPlayer : MonoBehaviour {
 
 	void Jump() {
 		animator.SetTrigger("Jump");
-		rigidBody.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+		rigidBody.AddForce(new Vector2(0, 50), ForceMode2D.Impulse);
 	}
 
 	void Hop() {
