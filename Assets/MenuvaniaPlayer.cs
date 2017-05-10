@@ -12,19 +12,23 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	private float movementSpeed;
 	Animator animator;
 	Vector3 checkpoint;
+	GameObject hitbox;
 	// Use this for initialization
 	void Start () {
 		checkpoint = transform.position;
 		animator = GetComponent<Animator>();
-		direction = 1;
+		direction = -1;
 		rigidBody = GetComponent<Rigidbody2D>();
 		movementSpeed = 0;
+		hitbox = transform.GetChild(0).gameObject;
+		hitbox.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Vector3 playerPos = transform.position;
-		rigidBody.MovePosition(new Vector2(playerPos.x + (movementSpeed * speed * Time.deltaTime * direction), playerPos.y));
+		//rigidBody.MovePosition(new Vector2(playerPos.x + (movementSpeed * speed * Time.deltaTime * direction), playerPos.y + Physics.gravity.y));
+		transform.Translate(movementSpeed * speed * Time.deltaTime * direction, 0, 0);
 	}
 
 	public void SetCheckpoint(Vector3 position) {
@@ -74,6 +78,12 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	void Attack() {
 		movementSpeed = 0;
 		animator.SetTrigger("Attack");
+		hitbox.SetActive(true);
+		Invoke("DisableHitbox", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+	}
+
+	void DisableHitbox() {
+		hitbox.SetActive(false);
 	}
 
 	void Jump() {
@@ -81,9 +91,20 @@ public class MenuvaniaPlayer : MonoBehaviour {
 		rigidBody.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
 	}
 
+	void Hop() {
+		animator.SetTrigger("Jump");
+		rigidBody.AddForce(new Vector2(5, 7), ForceMode2D.Impulse);
+	}
+
 	void Block() {
 		movementSpeed = 0;
 		animator.SetTrigger("Block");
+		gameObject.tag = "Finish";
+		Invoke("Unblock", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+	}
+
+	void Unblock() {
+		gameObject.tag = "Player";
 	}
 
 	#endregion
