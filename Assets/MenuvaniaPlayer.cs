@@ -11,8 +11,10 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	private int direction;
 	private float movementSpeed;
 	Animator animator;
+	Vector3 checkpoint;
 	// Use this for initialization
 	void Start () {
+		checkpoint = transform.position;
 		animator = GetComponent<Animator>();
 		direction = 1;
 		rigidBody = GetComponent<Rigidbody2D>();
@@ -24,6 +26,18 @@ public class MenuvaniaPlayer : MonoBehaviour {
 		Vector3 playerPos = transform.position;
 		rigidBody.MovePosition(new Vector2(playerPos.x + (movementSpeed * speed * Time.deltaTime * direction), playerPos.y));
 	}
+
+	public void SetCheckpoint(Vector3 position) {
+		checkpoint = position;
+	}
+
+	public void Die() {
+		movementSpeed = 0;
+		animator.SetTrigger("Idle");
+		transform.position = checkpoint;
+	}
+
+	#region Verbs
 
 	public void PerformAction(string action) {
 		Invoke(action, 0);
@@ -71,4 +85,6 @@ public class MenuvaniaPlayer : MonoBehaviour {
 		movementSpeed = 0;
 		animator.SetTrigger("Block");
 	}
+
+	#endregion
 }

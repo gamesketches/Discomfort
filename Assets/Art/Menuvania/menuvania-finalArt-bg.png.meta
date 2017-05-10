@@ -1,9 +1,43 @@
 fileFormatVersion: 2
 guid: d568605e52cfe431e9a8b6a8817b15cb
-timeCreated: 1494368150
+timeCreated: 1494388138
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: menuvania-finalArt-bg_0
+    21300002: menuvania-finalArt-bg_1
+    21300004: menuvania-finalArt-bg_2
+    21300006: menuvania-finalArt-bg_3
+    21300008: menuvania-finalArt-bg_4
+    21300010: menuvania-finalArt-bg_5
+    21300012: menuvania-finalArt-bg_6
+    21300014: menuvania-finalArt-bg_7
+    21300016: menuvania-finalArt-bg_8
+    21300018: menuvania-finalArt-bg_9
+    21300020: menuvania-finalArt-bg_10
+    21300022: menuvania-finalArt-bg_11
+    21300024: menuvania-finalArt-bg_12
+    21300026: menuvania-finalArt-bg_13
+    21300028: menuvania-finalArt-bg_14
+    21300030: menuvania-finalArt-bg_15
+    21300032: menuvania-finalArt-bg_16
+    21300034: menuvania-finalArt-bg_17
+    21300036: menuvania-finalArt-bg_18
+    21300038: menuvania-finalArt-bg_19
+    21300040: menuvania-finalArt-bg_20
+    21300042: menuvania-finalArt-bg_21
+    21300044: menuvania-finalArt-bg_22
+    21300046: menuvania-finalArt-bg_23
+    21300048: menuvania-finalArt-bg_24
+    21300050: menuvania-finalArt-bg_25
+    21300052: menuvania-finalArt-bg_26
+    21300054: menuvania-finalArt-bg_27
+    21300056: menuvania-finalArt-bg_28
+    21300058: menuvania-finalArt-bg_29
+    21300060: menuvania-finalArt-bg_30
+    21300062: menuvania-finalArt-bg_31
+    21300064: menuvania-finalArt-bg_32
+    21300066: menuvania-finalArt-bg_33
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,7 +126,449 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1734
+        width: 320
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_1
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1736
+        width: 640
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_2
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1734
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_3
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1734
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_4
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1734
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_5
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1734
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_6
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1734
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_7
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1624
+        width: 320
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_8
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1626
+        width: 640
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_9
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1624
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_10
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1624
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_11
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1624
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_12
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1624
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_13
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1624
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_14
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1513
+        width: 320
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_15
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1515
+        width: 640
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_16
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1513
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_17
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1513
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_18
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1513
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_19
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1513
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_20
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1513
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_21
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1401
+        width: 320
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_22
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1403
+        width: 640
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_23
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1401
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_24
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1401
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_25
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1401
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_26
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1401
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_27
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1401
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_28
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1197
+        width: 94
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_29
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 817
+        width: 340
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_30
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1016
+        width: 338
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_31
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 857
+        width: 580
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_32
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 16
+        width: 810
+        height: 664
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-finalArt-bg_33
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 9
+        width: 511
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
