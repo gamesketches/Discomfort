@@ -85,22 +85,38 @@ public class MenuvaniaCursor : MonoBehaviour {
 	}
 
 	void MoveLeft() {
-		drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		if(focusDepth == FocusDepth.Options) {
+			focusedItem.parent.gameObject.GetComponent<FolderBehavior>().FanIn();
+			focusDepth--;
+		}
+		if(focusDepth == FocusDepth.Files) {
+			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		}
 		currentDrawer--;
 		if(currentDrawer < 0) {
 			currentDrawer = drawers.Length - 1;
 		}
-		drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		if(focusDepth == FocusDepth.Files) {
+			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		}
 		UpdateFocusedItem();
 	}
 
 	void MoveRight() {
-		drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		if(focusDepth == FocusDepth.Options) {
+			focusedItem.parent.gameObject.GetComponent<FolderBehavior>().FanIn();
+			focusDepth--;
+		}
+		if(focusDepth == FocusDepth.Files) {
+			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		}
 		currentDrawer++;
 		if(currentDrawer >= drawers.Length) {
 			currentDrawer = 0;
 		}
-		drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		if(focusDepth == FocusDepth.Files) {
+			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
+		}
 		UpdateFocusedItem();
 	}
 
@@ -177,6 +193,19 @@ public class MenuvaniaCursor : MonoBehaviour {
 	}
 
 	void RepositionCursor() {
-		transform.position = focusedItem.position - new Vector3(0, 10, 0);
+		switch(focusDepth) {
+			case FocusDepth.Drawer:
+				transform.rotation = Quaternion.identity;
+				transform.position = focusedItem.position - new Vector3(0, 1, 0); 
+				break;
+			case FocusDepth.Files:
+				transform.rotation = Quaternion.Euler(0, 0, -90);
+				transform.position = focusedItem.position - new Vector3(1, 0, 0);
+				break;
+			case FocusDepth.Options:
+				transform.rotation = Quaternion.Euler(0, 0, -90);
+				transform.position = focusedItem.position - new Vector3(1, 0, 0);
+				break;
+		};
 	}
 }

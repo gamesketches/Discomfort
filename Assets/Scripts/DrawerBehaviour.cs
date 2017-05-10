@@ -5,7 +5,7 @@ using UnityEngine;
 public class DrawerBehaviour : MonoBehaviour {
 
 	private Vector3 startPosition;
-	public static float movement = -100;
+	public static float movement = -3;
 	public static float movementTime = 0.3f;
 	public Transform[] options;
 	bool toggled;
