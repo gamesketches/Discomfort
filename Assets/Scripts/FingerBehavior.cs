@@ -109,6 +109,7 @@ public class FingerBehavior : MonoBehaviour {
 			yield return null;
 		}
 		tip.MovePosition(targetPosition);
+		audioSource.pitch = Random.Range(0.95f, 1.05f);
 		audioSource.Play();
 		initialized = true;
 	}
