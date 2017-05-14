@@ -13,8 +13,10 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	Animator animator;
 	Vector3 checkpoint;
 	GameObject hitbox;
+	bool grounded;
 	// Use this for initialization
 	void Start () {
+		grounded = true;
 		checkpoint = transform.position;
 		animator = GetComponent<Animator>();
 		direction = 1;
@@ -39,6 +41,15 @@ public class MenuvaniaPlayer : MonoBehaviour {
 		movementSpeed = 0;
 		animator.SetTrigger("Idle");
 		transform.position = checkpoint;
+	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if(col.gameObject.tag == "Ground") {
+			grounded = true;
+			if(movementSpeed != 0) {
+				animator.SetTrigger("Walk");
+			}
+		}
 	}
 
 	#region Verbs
@@ -87,11 +98,13 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	}
 
 	void Jump() {
+		grounded = false;
 		animator.SetTrigger("Jump");
 		rigidBody.AddForce(new Vector2(0, 50), ForceMode2D.Impulse);
 	}
 
 	void Hop() {
+		grounded = false;
 		animator.SetTrigger("Jump");
 		rigidBody.AddForce(new Vector2(5, 7), ForceMode2D.Impulse);
 	}
