@@ -16,7 +16,7 @@ public class MenuvaniaCheckpoint : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.tag == "Player") {
-			other.GetComponent<MenuvaniaPlayer>().SetCheckpoint(transform.position);
+			other.GetComponent<MenuvaniaPlayer>().SetCheckpoint(other.transform.position);
 		}
 	}
 }
