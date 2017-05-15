@@ -6,8 +6,11 @@ public class EnemyBehavior : MonoBehaviour {
 
 	Vector3 pos1;
 	public Vector3 offset;
+	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource>();
+		audioSource.time = Random.Range(0, audioSource.clip.length);
 		pos1 = transform.position;	
 	}
 	
