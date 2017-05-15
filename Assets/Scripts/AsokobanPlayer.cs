@@ -56,12 +56,28 @@ public class AsokobanPlayer : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.tag == "Poop" && !audioSource.isPlaying) {
 			audioSource.Play();
+			if(col.transform.position.y < transform.position.y) {
+				renderer.sortingOrder = 2;
+			}
+			else {
+				renderer.sortingOrder = 4;
+			}
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D col) {
 		if(col.gameObject.tag == "Poop" && !audioSource.isPlaying) {
 			audioSource.Play();
+			if(col.transform.position.y < transform.position.y) {
+				renderer.sortingOrder = 2;
+			}
+			else {
+				renderer.sortingOrder = 4;
+			}
 		}
+	}
+
+	void OnCollisionExit2D(Collision2D col) {
+			renderer.sortingOrder = 4;
 	}
 }

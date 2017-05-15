@@ -17,7 +17,7 @@ public class WaterBehavior : MonoBehaviour {
 	void Update () {
 		if(sucking) {
 			Vector2 suckForce = new Vector2(transform.position.x - player.position.x, transform.position.y - player.transform.position.y);
-			player.AddForce(suckForce);
+			player.AddForce(suckForce * 1.5f);
 		}
 		swirl.Rotate(0, 0, -90 * Time.deltaTime);
 	}
