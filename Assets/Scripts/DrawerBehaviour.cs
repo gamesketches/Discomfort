@@ -9,9 +9,12 @@ public class DrawerBehaviour : MonoBehaviour {
 	public static float movementTime = 0.3f;
 	public Transform[] options;
 	bool toggled;
+	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
 		startPosition = transform.localPosition;
+		audioSource = GetComponent<AudioSource>();
+		LoadNextAudioClip();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +23,7 @@ public class DrawerBehaviour : MonoBehaviour {
 	}
 
 	public void ToggleDrawer() {
+		audioSource.Play();
 		if(!toggled) {
 			StartCoroutine(ChangePosition(startPosition + new Vector3(0, movement, 0)));	
 		}
@@ -36,6 +40,17 @@ public class DrawerBehaviour : MonoBehaviour {
 		for(float t = 0; t <= movementTime; t += Time.deltaTime) {
 			transform.localPosition = Vector3.Slerp(currentPosition, destination, t / movementTime);
 			yield return null;
+		}
+		transform.localPosition = destination;
+		LoadNextAudioClip();
+	}
+
+	void LoadNextAudioClip() {
+		if(transform.localPosition == startPosition) {
+			audioSource.clip = Resources.LoadAll<AudioClip>("Menuvania/Sounds/DrawerOpen")[Random.Range(0, 4)];
+		}
+		else {
+			audioSource.clip = Resources.LoadAll<AudioClip>("Menuvania/Sounds/DrawerClosed")[Random.Range(0, 4)];
 		}
 	}
 }
