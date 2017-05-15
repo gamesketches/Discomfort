@@ -39,7 +39,20 @@ public class MenuvaniaPlayer : MonoBehaviour {
 
 	public void Die() {
 		movementSpeed = 0;
+		rigidBody.velocity = Vector2.zero;
 		animator.SetTrigger("Idle");
+		StartCoroutine(ReturnToCheckpoint());
+	}
+
+	IEnumerator ReturnToCheckpoint() {
+		SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+		renderer.enabled = false;
+		Vector3 startPos = transform.position;
+		for(float t = 0; t <= 1; t += Time.deltaTime) {
+			transform.position = Vector3.Slerp(startPos, checkpoint, t);
+			yield return null;
+		}
+		renderer.enabled = true;
 		transform.position = checkpoint;
 	}
 
@@ -49,6 +62,9 @@ public class MenuvaniaPlayer : MonoBehaviour {
 			if(movementSpeed != 0) {
 				animator.SetTrigger("Walk");
 			}
+		}
+		else if(col.gameObject.tag == "Poop") {
+			Die();
 		}
 	}
 
@@ -98,15 +114,27 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	}
 
 	void Jump() {
-		grounded = false;
-		animator.SetTrigger("Jump");
-		rigidBody.AddForce(new Vector2(0, 50), ForceMode2D.Impulse);
+		if(grounded) {
+			grounded = false;
+			animator.SetTrigger("Jump");
+			rigidBody.AddForce(new Vector2(0, 50), ForceMode2D.Impulse);
+		}
 	}
 
 	void Hop() {
-		grounded = false;
-		animator.SetTrigger("Jump");
-		rigidBody.AddForce(new Vector2(5, 7), ForceMode2D.Impulse);
+		if(grounded) {
+			grounded = false;
+			animator.SetTrigger("Jump");
+			rigidBody.AddForce(new Vector2(20, 28), ForceMode2D.Impulse);
+		}
+	}
+
+	void BigJump() {
+		if(grounded) {
+			grounded = false;
+			animator.SetTrigger("Jump");
+			rigidBody.AddForce(new Vector2(0, 100), ForceMode2D.Impulse);
+		}
 	}
 
 	void Block() {
