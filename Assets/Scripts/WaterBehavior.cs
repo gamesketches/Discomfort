@@ -24,7 +24,19 @@ public class WaterBehavior : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.tag == "Player") {
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Asokoban");
+			StartCoroutine(SuckInPlayer(other.transform));
 		}
+	}
+
+	IEnumerator SuckInPlayer(Transform player) {
+		player.gameObject.GetComponent<AsokobanPlayer>().speed = 0;
+		player.parent = transform;
+		Vector3 startPos = player.localPosition;
+		for(float t = 0; t < 1; t += Time.deltaTime) {
+			player.localScale = Vector3.Lerp(new Vector3(1, 1, 1), Vector3.zero, t);
+			player.Rotate(0, 0, -270 * Time.deltaTime);
+			yield return null;
+		}
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Asokoban");
 	}
 }
