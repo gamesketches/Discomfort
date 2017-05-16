@@ -14,8 +14,10 @@ public class MenuvaniaPlayer : MonoBehaviour {
 	Vector3 checkpoint;
 	GameObject hitbox;
 	bool grounded;
+	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource>();
 		grounded = true;
 		checkpoint = transform.position;
 		animator = GetComponent<Animator>();
@@ -31,6 +33,13 @@ public class MenuvaniaPlayer : MonoBehaviour {
 		Vector3 playerPos = transform.position;
 		//rigidBody.MovePosition(new Vector2(playerPos.x + (movementSpeed * speed * Time.deltaTime * direction), playerPos.y + Physics.gravity.y));
 		transform.Translate(movementSpeed * speed * Time.deltaTime * direction, 0, 0);
+		if(grounded && movementSpeed != 0) {
+			if(!audioSource.isPlaying) 
+				audioSource.Play();
+		}
+		else {
+			audioSource.Stop();
+		}
 	}
 
 	public void SetCheckpoint(Vector3 position) {
