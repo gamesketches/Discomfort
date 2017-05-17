@@ -6,6 +6,7 @@ public class AsokobanPlayer : MonoBehaviour {
 
 	Rigidbody2D rigidBody;
 	Animator animationController;
+	Animator shadowController;
 	SpriteRenderer renderer;
 	BoxCollider2D collider;
 	public float speed;
@@ -15,6 +16,7 @@ public class AsokobanPlayer : MonoBehaviour {
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
 		animationController = GetComponent<Animator>();
+		shadowController = transform.GetChild(0).gameObject.GetComponent<Animator>();
 		renderer = GetComponent<SpriteRenderer>();
 		collider = GetComponent<BoxCollider2D>();
 		audioSource = GetComponent<AudioSource>();
@@ -39,14 +41,18 @@ public class AsokobanPlayer : MonoBehaviour {
 		rigidBody.MovePosition(rigidBody.position + (new Vector2(hori, vert) * speed * Time.deltaTime));
 		animationController.SetInteger("XMovement", (int)Input.GetAxisRaw("Horizontal"));
 		animationController.SetInteger("YMovement", (int)Input.GetAxisRaw("Vertical"));
+		shadowController.SetInteger("XMovement", (int)Input.GetAxisRaw("Horizontal"));
+		shadowController.SetInteger("YMovement", (int)Input.GetAxisRaw("Vertical"));
 		if(hori > 0) {
 			renderer.flipX = true;
 			Vector2 baseOffset = collider.offset;
+			transform.GetChild(0).localPosition = new Vector3(0.38f, -0.9f, 0);
 			baseOffset.x = Mathf.Abs(baseOffset.x);
 			collider.offset = baseOffset;
 		}
 		else if(hori < 0) {
 			renderer.flipX = false;
+			transform.GetChild(0).localPosition = new Vector3(0.85f, -0.9f, 0);
 			Vector2 baseOffset = collider.offset;
 			baseOffset.x = Mathf.Abs(baseOffset.x) * -1;
 			collider.offset = baseOffset;
