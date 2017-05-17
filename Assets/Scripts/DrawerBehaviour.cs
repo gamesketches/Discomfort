@@ -9,9 +9,11 @@ public class DrawerBehaviour : MonoBehaviour {
 	public static float movementTime = 0.3f;
 	public Transform[] options;
 	bool toggled;
+	public bool locked;
 	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
+		locked = true;
 		startPosition = transform.localPosition;
 		audioSource = GetComponent<AudioSource>();
 		LoadNextAudioClip();
@@ -52,5 +54,10 @@ public class DrawerBehaviour : MonoBehaviour {
 		else {
 			audioSource.clip = Resources.LoadAll<AudioClip>("Menuvania/Sounds/DrawerClosed")[Random.Range(0, 4)];
 		}
+	}
+
+	public void UnlockDrawer() {
+		transform.GetChild(2).gameObject.SetActive(false);
+		locked = false;
 	}
 }

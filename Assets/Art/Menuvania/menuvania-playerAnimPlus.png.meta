@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: 0494b766ab45042d39174c8face12fbc
+timeCreated: 1495036770
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: menuvania-playerAnimPlus_0
+    21300002: menuvania-playerAnimPlus_1
+    21300004: menuvania-playerAnimPlus_2
+    21300006: menuvania-playerAnimPlus_3
+    21300008: menuvania-playerAnimPlus_4
+    21300010: menuvania-playerAnimPlus_5
+    21300012: menuvania-playerAnimPlus_6
+    21300014: menuvania-playerAnimPlus_7
+    21300016: menuvania-playerAnimPlus_8
+    21300018: menuvania-playerAnimPlus_9
+    21300020: menuvania-playerAnimPlus_10
+    21300022: menuvania-playerAnimPlus_11
+    21300024: menuvania-playerAnimPlus_12
+    21300026: menuvania-playerAnimPlus_13
+    21300028: menuvania-playerAnimPlus_14
+    21300030: menuvania-playerAnimPlus_15
+    21300032: menuvania-playerAnimPlus_16
+    21300034: menuvania-playerAnimPlus_17
+    21300036: menuvania-playerAnimPlus_18
+    21300038: menuvania-playerAnimPlus_19
+    21300040: menuvania-playerAnimPlus_20
+    21300042: menuvania-playerAnimPlus_21
+    21300044: menuvania-playerAnimPlus_22
+    21300046: menuvania-playerAnimPlus_23
+    21300048: menuvania-playerAnimPlus_24
+    21300050: menuvania-playerAnimPlus_25
+    21300052: menuvania-playerAnimPlus_26
+    21300054: menuvania-playerAnimPlus_27
+    21300056: menuvania-playerAnimPlus_28
+    21300058: menuvania-playerAnimPlus_29
+    21300060: menuvania-playerAnimPlus_30
+    21300062: menuvania-playerAnimPlus_31
+    21300064: menuvania-playerAnimPlus_32
+    21300066: menuvania-playerAnimPlus_33
+    21300068: menuvania-playerAnimPlus_34
+    21300070: menuvania-playerAnimPlus_35
+    21300072: menuvania-playerAnimPlus_36
+    21300074: menuvania-playerAnimPlus_37
+    21300076: menuvania-playerAnimPlus_38
+    21300078: menuvania-playerAnimPlus_39
+    21300080: menuvania-playerAnimPlus_40
+    21300082: menuvania-playerAnimPlus_41
+    21300084: menuvania-playerAnimPlus_42
+    21300086: menuvania-playerAnimPlus_43
+    21300088: menuvania-playerAnimPlus_44
+    21300090: menuvania-playerAnimPlus_45
+    21300092: menuvania-playerAnimPlus_46
+    21300094: menuvania-playerAnimPlus_47
+    21300096: menuvania-playerAnimPlus_48
+    21300098: menuvania-playerAnimPlus_49
+    21300100: menuvania-playerAnimPlus_50
+    21300102: menuvania-playerAnimPlus_51
+    21300104: menuvania-playerAnimPlus_52
+    21300106: menuvania-playerAnimPlus_53
+    21300108: menuvania-playerAnimPlus_54
+    21300110: menuvania-playerAnimPlus_55
+    21300112: menuvania-playerAnimPlus_56
+    21300114: menuvania-playerAnimPlus_57
+    21300116: menuvania-playerAnimPlus_58
+    21300118: menuvania-playerAnimPlus_59
+    21300120: menuvania-playerAnimPlus_60
+    21300122: menuvania-playerAnimPlus_61
+    21300124: menuvania-playerAnimPlus_62
+    21300126: menuvania-playerAnimPlus_63
+    21300128: menuvania-playerAnimPlus_64
+    21300130: menuvania-playerAnimPlus_65
+    21300132: menuvania-playerAnimPlus_66
+    21300134: menuvania-playerAnimPlus_67
+    21300136: menuvania-playerAnimPlus_68
+    21300138: menuvania-playerAnimPlus_69
+    21300140: menuvania-playerAnimPlus_70
+    21300142: menuvania-playerAnimPlus_71
+    21300144: menuvania-playerAnimPlus_72
+    21300146: menuvania-playerAnimPlus_73
+    21300148: menuvania-playerAnimPlus_74
+    21300150: menuvania-playerAnimPlus_75
+    21300152: menuvania-playerAnimPlus_76
+    21300154: menuvania-playerAnimPlus_77
+    21300156: menuvania-playerAnimPlus_78
+    21300158: menuvania-playerAnimPlus_79
+    21300160: menuvania-playerAnimPlus_80
+    21300162: menuvania-playerAnimPlus_81
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 2199
+        width: 54
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2199
+        width: 53
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 2199
+        width: 75
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_3
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 2199
+        width: 135
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2002
+        width: 58
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 2000
+        width: 48
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_6
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1999
+        width: 54
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_7
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 2000
+        width: 49
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_8
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2002
+        width: 59
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_9
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 2002
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_10
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 2002
+        width: 75
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_11
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 2003
+        width: 81
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_12
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1798
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_13
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1798
+        width: 67
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_14
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1798
+        width: 68
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_15
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1798
+        width: 66
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_16
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1798
+        width: 52
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_17
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1798
+        width: 79
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_18
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1921
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_19
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1922
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_20
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1867
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_21
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 1871
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_22
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1599
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_23
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1599
+        width: 67
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_24
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1599
+        width: 68
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_25
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1599
+        width: 66
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_26
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1599
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_27
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1599
+        width: 67
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_28
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 1599
+        width: 66
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_29
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1599
+        width: 67
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_30
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1399
+        width: 54
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_31
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1399
+        width: 53
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_32
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1399
+        width: 75
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_33
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 1399
+        width: 135
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_34
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1202
+        width: 58
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_35
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1201
+        width: 48
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_36
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1199
+        width: 54
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_37
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1201
+        width: 49
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_38
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1202
+        width: 59
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_39
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1203
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_40
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1203
+        width: 75
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_41
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1204
+        width: 81
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_42
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 999
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_43
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 999
+        width: 67
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_44
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 999
+        width: 68
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_45
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 999
+        width: 66
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_46
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 999
+        width: 52
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_47
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 999
+        width: 79
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_48
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 800
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_49
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 799
+        width: 67
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_50
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 799
+        width: 68
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_51
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 800
+        width: 66
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_52
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 800
+        width: 67
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_53
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 799
+        width: 67
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_54
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 799
+        width: 66
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_55
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 800
+        width: 67
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_56
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 598
+        width: 54
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_57
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 598
+        width: 53
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_58
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 598
+        width: 75
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_59
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 598
+        width: 135
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_60
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 401
+        width: 58
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_61
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 400
+        width: 48
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_62
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 399
+        width: 54
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_63
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 400
+        width: 49
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_64
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 401
+        width: 59
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_65
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 403
+        width: 67
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_66
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 403
+        width: 75
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_67
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 404
+        width: 81
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_68
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 199
+        width: 67
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_69
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 199
+        width: 67
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_70
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 199
+        width: 67
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_71
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 199
+        width: 66
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_72
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 199
+        width: 52
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_73
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 199
+        width: 79
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_74
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 67
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_75
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 67
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_76
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 0
+        width: 67
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_77
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 66
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_78
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 67
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_79
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 67
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_80
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 0
+        width: 66
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: menuvania-playerAnimPlus_81
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 0
+        width: 67
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,7 +7,8 @@ using InControl;
 public enum FocusDepth {Drawer, Files, Options};
 public class MenuvaniaCursor : MonoBehaviour {
 
-	public GameObject[] drawers;
+	public List<GameObject> drawers;
+	GameObject[] allDrawers;
 	FocusDepth focusDepth;
 	int currentDrawer;
 	public Transform focusedItem;
@@ -16,7 +17,9 @@ public class MenuvaniaCursor : MonoBehaviour {
 	// Use this for initialization
 	IEnumerator Start () {
 		started = false;
-		drawers = GameObject.FindGameObjectsWithTag("Drawer");
+		allDrawers = GameObject.FindGameObjectsWithTag("Drawer");
+		drawers = new List<GameObject>();
+		drawers.Add(allDrawers[0]);
 		currentDrawer = 0;
 		focusedItem = drawers[currentDrawer].transform;
 		RepositionCursor();
@@ -25,6 +28,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 		while(!InputManager.ActiveDevice.AnyButton.WasPressed) {
 			yield return null;
 		}
+		focusedItem.GetComponent<DrawerBehaviour>().UnlockDrawer();
 		started = true;
 	}
 	
@@ -101,7 +105,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
 		}
 		currentDrawer++;
-		if(currentDrawer >= drawers.Length) {
+		if(currentDrawer >= drawers.Count) {
 			currentDrawer = 0;
 		}
 		if(focusDepth == FocusDepth.Files) {
@@ -120,7 +124,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 		}
 		currentDrawer--;
 		if(currentDrawer < 0) {
-			currentDrawer = drawers.Length - 1;
+			currentDrawer = drawers.Count - 1;
 		}
 		if(focusDepth == FocusDepth.Files) {
 			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
@@ -215,5 +219,15 @@ public class MenuvaniaCursor : MonoBehaviour {
 				transform.position = focusedItem.position - new Vector3(1, 0, 0);
 				break;
 		};
+	}
+
+	public void UnlockDrawer(string drawerName) {
+		foreach(GameObject drawer in allDrawers) {
+			if(drawer.name == drawerName) {
+				drawer.GetComponent<DrawerBehaviour>().UnlockDrawer();
+				drawers.Add(drawer);
+				break;
+			}
+		}
 	}
 }

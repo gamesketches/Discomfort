@@ -75,6 +75,10 @@ public class MenuvaniaPlayer : MonoBehaviour {
 		else if(col.gameObject.tag == "Poop") {
 			Die();
 		}
+		else if(col.gameObject.tag == "Upgrade") {
+			GameObject.Find("Cursor").GetComponent<MenuvaniaCursor>().UnlockDrawer(col.gameObject.name);
+			Destroy(col.gameObject);
+		}
 	}
 
 	#region Verbs
