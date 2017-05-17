@@ -104,9 +104,9 @@ public class MenuvaniaCursor : MonoBehaviour {
 		if(focusDepth == FocusDepth.Files) {
 			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
 		}
-		currentDrawer++;
-		if(currentDrawer >= drawers.Count) {
-			currentDrawer = 0;
+		currentDrawer--;
+		if(currentDrawer < 0) {
+			currentDrawer = drawers.Count - 1;
 		}
 		if(focusDepth == FocusDepth.Files) {
 			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
@@ -122,9 +122,9 @@ public class MenuvaniaCursor : MonoBehaviour {
 		if(focusDepth == FocusDepth.Files) {
 			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
 		}
-		currentDrawer--;
-		if(currentDrawer < 0) {
-			currentDrawer = drawers.Count - 1;
+		currentDrawer++;
+		if(currentDrawer >= drawers.Count) {
+			currentDrawer = 0;
 		}
 		if(focusDepth == FocusDepth.Files) {
 			drawers[currentDrawer].GetComponent<DrawerBehaviour>().ToggleDrawer();
