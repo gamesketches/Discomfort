@@ -12,37 +12,45 @@ public class MenuvaniaCursor : MonoBehaviour {
 	int currentDrawer;
 	public Transform focusedItem;
 	GameObject player;
+	bool started;
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
+		started = false;
 		drawers = GameObject.FindGameObjectsWithTag("Drawer");
 		currentDrawer = 0;
 		focusedItem = drawers[currentDrawer].transform;
 		RepositionCursor();
 		focusDepth = FocusDepth.Drawer;
 		player = GameObject.FindGameObjectWithTag("Player");
+		while(!InputManager.ActiveDevice.AnyButton.WasPressed) {
+			yield return null;
+		}
+		started = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(InputManager.ActiveDevice.Action1.WasPressed || Input.GetKeyDown(KeyCode.Space)) {
-			ConfirmButton();
+		if(started) {
+			if(InputManager.ActiveDevice.Action1.WasPressed || Input.GetKeyDown(KeyCode.Space)) {
+				ConfirmButton();
+			}
+			else if(InputManager.ActiveDevice.Action2.WasPressed || Input.GetKeyDown(KeyCode.Q)) {
+				CancelButton();
+			}
+			else if(InputManager.ActiveDevice.DPadLeft.WasPressed || Input.GetKeyDown(KeyCode.LeftArrow)) {
+				MoveLeft();
+			}
+			else if(InputManager.ActiveDevice.DPadRight.WasPressed || Input.GetKeyDown(KeyCode.RightArrow)) {
+				MoveRight();
+			}
+			else if(InputManager.ActiveDevice.DPad.Up.WasPressed || Input.GetKeyDown(KeyCode.UpArrow)) {
+				MoveUp();
+			}
+			else if(InputManager.ActiveDevice.DPad.Down.WasPressed || Input.GetKeyDown(KeyCode.DownArrow)) {
+				MoveDown();
+			}
+			RepositionCursor();
 		}
-		else if(InputManager.ActiveDevice.Action2.WasPressed || Input.GetKeyDown(KeyCode.Q)) {
-			CancelButton();
-		}
-		else if(InputManager.ActiveDevice.DPadLeft.WasPressed || Input.GetKeyDown(KeyCode.LeftArrow)) {
-			MoveLeft();
-		}
-		else if(InputManager.ActiveDevice.DPadRight.WasPressed || Input.GetKeyDown(KeyCode.RightArrow)) {
-			MoveRight();
-		}
-		else if(InputManager.ActiveDevice.DPad.Up.WasPressed || Input.GetKeyDown(KeyCode.UpArrow)) {
-			MoveUp();
-		}
-		else if(InputManager.ActiveDevice.DPad.Down.WasPressed || Input.GetKeyDown(KeyCode.DownArrow)) {
-			MoveDown();
-		}
-		RepositionCursor();
 	}
 
 	void ConfirmButton() {
