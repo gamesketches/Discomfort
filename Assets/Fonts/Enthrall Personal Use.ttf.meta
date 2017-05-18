@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fda1469af639448509fcefc52f81708b
+timeCreated: 1495087984
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Enthrall Personal Use
+  fontNames:
+  - Enthrall Personal Use
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
