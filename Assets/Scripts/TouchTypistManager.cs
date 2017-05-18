@@ -70,7 +70,7 @@ public class TouchTypistManager : MonoBehaviour {
 		currentPhraseIndex = 0;
 
 		audioSource = GetComponent<AudioSource>();
-		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
+		audioSource.clip = Resources.Load<AudioClip>("TouchTypist//type1");
 		timer = GameObject.Find("clockLeg");
 
 		GameObject logo = GameObject.Find("Logo");
@@ -158,7 +158,7 @@ public class TouchTypistManager : MonoBehaviour {
 		currentPhrase.rightHeldKey = nextPhrase.rightHeldKey;
 		leftHoldText.text = HeldKeyText(currentPhrase.leftHeldKey);
 		rightHoldText.text = HeldKeyText(currentPhrase.rightHeldKey);
-		audioSource.clip = Resources.Load<AudioClip>("Sounds/slide");
+		audioSource.clip = Resources.Load<AudioClip>("TouchTypist/slide");
 		audioSource.Play();
 		Vector3 offset;
 		if(nextPhrase.rightHeldKey == KeyCode.None) {
@@ -186,7 +186,7 @@ public class TouchTypistManager : MonoBehaviour {
 		foreach(GameObject text in GameObject.FindGameObjectsWithTag("FinishedText")) {
 				StartCoroutine(MoveText(text.GetComponent<Text>(), offset));
 			}
-		audioSource.clip = Resources.Load<AudioClip>("Sounds/type1");
+		audioSource.clip = Resources.Load<AudioClip>("TouchTypist/type1");
 		currentPhrase = phrases.Dequeue();
 		currentText.text = currentPhrase.textContent;
 		yield return StartCoroutine(MoveText(currentText, offset / 2));
@@ -279,9 +279,9 @@ public class TouchTypistManager : MonoBehaviour {
 
 	void SetUpPostTutorialPhrases() {
 		phrases.Enqueue(new Phrase("The man is also filial piety", KeyCode.W, KeyCode.V,4, Vector3.zero, null));
-		phrases.Enqueue(new Phrase("And good guilty of those who", KeyCode.R, KeyCode.Z, 4, Vector3.zero, null));
+		phrases.Enqueue(new Phrase("and good guilty of those who", KeyCode.R, KeyCode.Z, 4, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("fresh bad guilty", KeyCode.X, KeyCode.P, 7, Vector3.zero, null));
-		phrases.Enqueue(new Phrase("and good for chaos", KeyCode.M, KeyCode.K, 6, Vector3.zero, null));
+		phrases.Enqueue(new Phrase("and good for chaos", KeyCode.V, KeyCode.K, 6, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("not the there", KeyCode.S, KeyCode.J, 2, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("Gentleman of this", KeyCode.X, KeyCode.R, 4, Vector3.zero, null));
 		phrases.Enqueue(new Phrase ("the legislation and students", KeyCode.Q, KeyCode.V, 9, Vector2.zero, null));
