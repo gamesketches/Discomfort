@@ -14,9 +14,11 @@ public class AsokobanTitleScreen : MonoBehaviour {
 	Vector3 cameraTarget;
 	float cameraSize;
 	bool started;
+	bool ended;
 	// Use this for initialization
 	void Start () {
 		started = false;
+		ended = false;
 		cameraTarget = Camera.main.transform.position;
 		cameraSize = Camera.main.orthographicSize;
 		Camera.main.transform.position = new Vector3(0, 0, -10);
@@ -42,6 +44,17 @@ public class AsokobanTitleScreen : MonoBehaviour {
 				started = true;
 			}
 		}
+		else if(!ended){
+			if(GameObject.FindGameObjectsWithTag("Poop").Length == 0) {
+				StartCoroutine(Offboarding());
+				foreach(Image img in UIImages) {
+					img.CrossFadeAlpha(1.0f, 0.5f, false);
+				}
+				UIText.CrossFadeAlpha(1.0f, 0.5f, false);
+				UIText.text = "You win!";
+				ended = true;
+			}
+		}
 	}
 
 	IEnumerator Onboarding() {
@@ -50,5 +63,15 @@ public class AsokobanTitleScreen : MonoBehaviour {
 			Camera.main.orthographicSize = Mathf.SmoothStep(28, cameraSize, t / zoomInTime);
 			yield return null;
 		}
+	}
+
+	IEnumerator Offboarding() {
+		for(float t = 0; t <= zoomInTime; t += Time.deltaTime) {
+			Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 0, -10), t / zoomInTime);
+			Camera.main.orthographicSize = Mathf.SmoothStep(cameraSize, 28, t / zoomInTime);
+			yield return null;
+		}
+		yield return new WaitForSeconds(4);
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Asokoban");
 	}
 }
