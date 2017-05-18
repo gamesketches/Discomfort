@@ -28,7 +28,7 @@ public class TrashCan : MonoBehaviour {
 		else {
 			renderer.sortingOrder = 1;
 		}
-		lidRenderer.sortingOrder = renderer.sortingOrder;
+		lidRenderer.sortingOrder = renderer.sortingOrder + 1;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
