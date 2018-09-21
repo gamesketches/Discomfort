@@ -43,7 +43,7 @@ public class FingerBehavior : MonoBehaviour {
 	}
 
 	public void InitializeFinger(Vector3 target) {
-		if(lineRenderer.numPositions > 1) {
+		if(lineRenderer.positionCount > 1) {
 			return;
 		}
 		targetPosition = target;
@@ -86,13 +86,13 @@ public class FingerBehavior : MonoBehaviour {
 		
 		float i = 0;
 		//while(i < fingerDensity) {
-		Vector3[] positions = new Vector3[lineRenderer.numPositions];
+		Vector3[] positions = new Vector3[lineRenderer.positionCount];
 		lineRenderer.GetPositions(positions);
-		float distancePerPoint = (float)fingerAnimationCurve.keys[fingerAnimationCurve.keys.Length - 1].time / (float)(lineRenderer.numPositions - 1);
-		for(int k = 0; k < lineRenderer.numPositions; k++){	
+		float distancePerPoint = (float)fingerAnimationCurve.keys[fingerAnimationCurve.keys.Length - 1].time / (float)(lineRenderer.positionCount - 1);
+		for(int k = 0; k < lineRenderer.positionCount; k++){	
 			lineRenderer.SetPosition(k, new Vector3(distancePerPoint * k, fingerAnimationCurve.Evaluate(distancePerPoint * k), -1));
 		}
-		tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(lineRenderer.GetPosition(lineRenderer.numPositions - 1));
+		tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(lineRenderer.GetPosition(lineRenderer.positionCount - 1));
 		//tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.numPositions - 2) - position)));
 
 	}
@@ -100,11 +100,11 @@ public class FingerBehavior : MonoBehaviour {
 	IEnumerator AnimateFingerInit() {
 		float t = 0;
 		while(t < Vector3.Distance(Vector3.zero, transform.worldToLocalMatrix.MultiplyPoint(targetPosition))) {
-			lineRenderer.numPositions = lineRenderer.numPositions + 1;
+			lineRenderer.positionCount = lineRenderer.positionCount + 1;
 			Vector3 position = new Vector3(t, fingerAnimationCurve.Evaluate(t));
-			lineRenderer.SetPosition(lineRenderer.numPositions -1, position);
+			lineRenderer.SetPosition(lineRenderer.positionCount -1, position);
 			tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(position);
-			tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.numPositions - 2) - position)));
+			tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.positionCount - 2) - position)));
 			t += Time.deltaTime * 80;
 			yield return null;
 		}
