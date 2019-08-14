@@ -47,6 +47,7 @@ public class TouchTypistManager : MonoBehaviour {
 	AudioSource audioSource;
 	Transform[] keys;
 	bool playing;
+    bool timerRunning = false;
 
 	HighScoreManager highScoreList;
 
@@ -66,7 +67,7 @@ public class TouchTypistManager : MonoBehaviour {
 		currentText.enabled = false;
 		leftHoldText.text = "";
 		rightHoldText.text = "";
-		currentTime += currentPhrase.timeBonus;
+        currentTime = 0.4f;
 		currentPhraseIndex = 0;
 
 		audioSource = GetComponent<AudioSource>();
@@ -81,7 +82,9 @@ public class TouchTypistManager : MonoBehaviour {
 		}
 
 		OnBoardEvent();
-		playing = true;
+        Debug.Log(currentPhrase.timeBonus);
+        AddTime(currentPhrase.timeBonus, 0.4f);
+        playing = true;
 		//logo.SetActive(false);
 		logoText.SetActive(false);
 		currentText.enabled = true;
@@ -91,23 +94,29 @@ public class TouchTypistManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(playing) {
-			currentTime -= Time.deltaTime;
-			timer.transform.localRotation = Quaternion.Euler(0, 0, 180 - (6 * currentTime));
-			if(currentTime < 0) {
-				playing = false;
-				currentText.text = "OUT OF TIME,\n enter to retry";
-				leftHoldText.color = Color.clear;
-				rightHoldText.color = Color.clear;
-				
-				StartCoroutine(ResetGame());
-			}
-			else if(KeysStillHeld()){
+            UpdateTimer();
+			if( currentTime > 0 && KeysStillHeld()){
 				InputLetter();
 			}
 		}
 	}
 
-	void InputLetter() {
+    void UpdateTimer() {
+        timer.transform.localRotation = Quaternion.Euler(0, 0, 180 - (6 * currentTime));
+        if (timerRunning) {
+            currentTime -= Time.deltaTime;
+            if (currentTime < 0) {
+                playing = false;
+                currentText.text = "OUT OF TIME,\n enter to retry";
+                leftHoldText.color = Color.clear;
+                rightHoldText.color = Color.clear;
+
+                StartCoroutine(ResetGame());
+                }
+           }
+    }
+
+    void InputLetter() {
 		if(Input.GetKeyDown(CurrentCharacter())) {
 			MoveFinger(CurrentCharacter());
 			currentPhraseIndex += 1;
@@ -137,15 +146,12 @@ public class TouchTypistManager : MonoBehaviour {
 	void MoveFinger(string letter) {
 		FingerBehavior curFinger = (FingerBehavior)fingers.Current;
 		Vector3 position = new Vector3(Random.Range(-3f, 2.5f), Random.Range(-2.6f, -4.5f));
-		Debug.Log("RandomPosition: " + position.ToString());
 		foreach(Transform key in keys) {
 			if(key.name == letter.ToLower()) {
-                Debug.Log("Moving to " + key.name + " at " + key.position.ToString());
 				position = key.position;
 				break;
 			}
 		}
-        Debug.Log(curFinger.name);
 		curFinger.MoveToTarget(position);
 		if(!fingers.MoveNext()) {
 			fingers.Reset();
@@ -154,6 +160,7 @@ public class TouchTypistManager : MonoBehaviour {
 	}
 
 	IEnumerator FinishPhrase() {
+        timerRunning = false;
 		currentText.text = string.Concat("<color=black>", currentPhrase.textContent, "</color>");
 		Phrase nextPhrase = phrases.Peek();
 		currentPhrase.leftHeldKey = nextPhrase.leftHeldKey;
@@ -169,20 +176,18 @@ public class TouchTypistManager : MonoBehaviour {
 		else {
 			offset = new Vector3(0, 200);
 		}
-		RectTransform paperShadow = GameObject.Find("paperShadow").GetComponent<RectTransform>();
+        SpriteRenderer timerRenderer = timer.GetComponent<SpriteRenderer>();
+        timerRenderer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
+        StartCoroutine(AddTime(nextPhrase.timeBonus, audioSource.clip.length + 1));
+        RectTransform paperShadow = GameObject.Find("paperShadow").GetComponent<RectTransform>();
 		Vector3 shadowStart = paperShadow.transform.position;
 		Vector3 startPos = paperSprite.transform.parent.position;
 		Vector3 endPos = paperShadowStartPos;//Vector3.zero + new Vector3(0, paperSprite.transform.position.y, paperSprite.transform.position.z);
 		for(float t = 0; t < audioSource.clip.length; t += Time.deltaTime) {
 			paperSprite.transform.localPosition = Vector3.Lerp(paperSprite.transform.localPosition, paperLocalPos, t / audioSource.clip.length);
 			paperSprite.transform.parent.position = Vector3.Lerp(startPos, endPos, t / audioSource.clip.length);
-			currentTime += Time.deltaTime;
 			yield return null;
 		}
-		SpriteRenderer timerRenderer = timer.GetComponent<SpriteRenderer>();
-		timerRenderer.color = new Color(101f / 255f, 255f / 255f, 140f / 255f);
-		StartCoroutine(AddTime(nextPhrase.timeBonus));
-		timerRenderer.color = Color.black;
 		ShedText(currentText);
 		currentText.rectTransform.transform.Translate(-offset / 2);
 		foreach(GameObject text in GameObject.FindGameObjectsWithTag("FinishedText")) {
@@ -194,9 +199,10 @@ public class TouchTypistManager : MonoBehaviour {
 		yield return StartCoroutine(MoveText(currentText, offset / 2));
 		leftHoldText.text = HeldKeyText(currentPhrase.leftHeldKey);
 		rightHoldText.text = HeldKeyText(currentPhrase.rightHeldKey);
-		currentTime += currentPhrase.timeBonus;
 		currentPhraseIndex = 0;
-		}
+        timerRunning = true;
+        timerRenderer.color = Color.black;
+    }
 
 	IEnumerator MoveText(Text theText, Vector3 offset) {
 		float t = 0;
@@ -271,12 +277,12 @@ public class TouchTypistManager : MonoBehaviour {
 
 	void SetUpPhrases() {
 		phrases = new Queue<Phrase>();
-		phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 14, Vector2.zero, null));
+        phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 14, Vector2.zero, null));
 		phrases.Enqueue(new Phrase ("And Mind The Timer", KeyCode.None, KeyCode.None, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Blue letters must be held", KeyCode.K, KeyCode.None, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Letting go is starting over", KeyCode.J, KeyCode.None, 8, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Now it begins", KeyCode.R, KeyCode.U, 2, Vector2.zero, null));
-		SetUpPostTutorialPhrases();
+        SetUpPostTutorialPhrases();
 	}
 
 	void SetUpPostTutorialPhrases() {
@@ -290,14 +296,14 @@ public class TouchTypistManager : MonoBehaviour {
 		phrases.Enqueue(new Phrase("You Win!", KeyCode.None, KeyCode.None, 0, Vector2.zero, null));
 	}
 
-	IEnumerator AddTime(float timeBonus) {
+	IEnumerator AddTime(float timeBonus, float lerpTime) {
 		float startTime = currentTime;
-		float endTime = currentTime + timeBonus; 
-		for(float t = 0; t < 1; t += Time.deltaTime) {
-			currentTime = Mathf.Lerp(startTime, endTime, t);
-			timer.transform.localRotation = Quaternion.Euler(0, 0, 180 - (6 * currentTime));
+		float endTime = currentTime + timeBonus;
+		for(float t = 0; t < lerpTime; t += Time.deltaTime) {
+            currentTime = Mathf.Lerp(startTime, endTime, t / lerpTime);
 			yield return null;
 		}
+        currentTime = endTime;
 	}
 
 	IEnumerator ResetGame() {
