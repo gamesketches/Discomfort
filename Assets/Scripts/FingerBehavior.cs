@@ -53,7 +53,7 @@ public class FingerBehavior : MonoBehaviour {
 		for(int i = 0; i < transform.childCount; i++) {
 			transform.GetChild(i).localPosition = new Vector3(transform.GetChild(i).localPosition.x, Random.value);
 		}
-		transform.GetChild(transform.childCount - 1).position = transform.worldToLocalMatrix.MultiplyPoint(target);
+        transform.GetChild(transform.childCount - 1).position = target;
 
 		fingerAnimationCurve.AddKey(new Keyframe(0, 0));
 		Vector2[] colliderPoints = new Vector2[transform.childCount];
@@ -117,13 +117,14 @@ public class FingerBehavior : MonoBehaviour {
 	IEnumerator AnimateFingerMovement() {
 		Vector3 currentPos = tip.transform.position;
 		for(float t = 0; t < moveTime; t += Time.deltaTime) {
-			tip.MovePosition(Vector3.Lerp(currentPos, targetPosition, t / moveTime));
-			yield return null;
+            tip.MovePosition(Vector3.Lerp(currentPos, targetPosition, t / moveTime));
+            tip.transform.position = Vector3.Lerp(currentPos, targetPosition, t / moveTime);
+            yield return null;
 		}
 		audioSource.Play();
-		tip.MovePosition(targetPosition);
+        tip.MovePosition(targetPosition);
 		yield return new WaitForSeconds(0.1f);
-		tip.MovePosition(tip.transform.position + (Vector3.up * 0.1f));
+        tip.MovePosition(tip.transform.position + (Vector3.up * 0.1f));
 	}
 
 }

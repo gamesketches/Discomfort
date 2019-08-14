@@ -140,10 +140,12 @@ public class TouchTypistManager : MonoBehaviour {
 		Debug.Log("RandomPosition: " + position.ToString());
 		foreach(Transform key in keys) {
 			if(key.name == letter.ToLower()) {
+                Debug.Log("Moving to " + key.name + " at " + key.position.ToString());
 				position = key.position;
 				break;
 			}
 		}
+        Debug.Log(curFinger.name);
 		curFinger.MoveToTarget(position);
 		if(!fingers.MoveNext()) {
 			fingers.Reset();
