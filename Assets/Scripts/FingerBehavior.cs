@@ -100,7 +100,7 @@ public class FingerBehavior : MonoBehaviour {
 
 	IEnumerator AnimateFingerInit() {
 		float t = 0;
-        int pointsPerFrame = 3;
+        int pointsPerFrame = 6;
         int counter = 0;
 		while(t < Vector3.Distance(Vector3.zero, transform.worldToLocalMatrix.MultiplyPoint(targetPosition))) {
 			lineRenderer.positionCount = lineRenderer.positionCount + 1;
