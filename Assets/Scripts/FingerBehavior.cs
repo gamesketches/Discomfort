@@ -63,6 +63,7 @@ public class FingerBehavior : MonoBehaviour {
 		}
 		collider.points = colliderPoints;
 		tipSprite = Instantiate(Resources.Load<GameObject>("FingerTip"));
+        tipSprite.GetComponent<SpriteRenderer>().sortingOrder = lineRenderer.sortingOrder;
 		StartCoroutine(AnimateFingerInit());
 		tip = transform.GetChild(transform.childCount - 1).GetComponent<Rigidbody2D>();
 	}
@@ -99,14 +100,21 @@ public class FingerBehavior : MonoBehaviour {
 
 	IEnumerator AnimateFingerInit() {
 		float t = 0;
+        int pointsPerFrame = 3;
+        int counter = 0;
 		while(t < Vector3.Distance(Vector3.zero, transform.worldToLocalMatrix.MultiplyPoint(targetPosition))) {
 			lineRenderer.positionCount = lineRenderer.positionCount + 1;
 			Vector3 position = new Vector3(t, fingerAnimationCurve.Evaluate(t));
 			lineRenderer.SetPosition(lineRenderer.positionCount -1, position);
 			tipSprite.transform.position = transform.localToWorldMatrix.MultiplyPoint(position);
 			tipSprite.transform.rotation = Quaternion.Euler(0, 0, Mathf.Abs(Vector3.Angle(Vector3.up, lineRenderer.GetPosition(lineRenderer.positionCount - 2) - position)));
-			t += Time.deltaTime * 80;
-			yield return null;
+			t += Time.deltaTime * 10;
+            if (counter == pointsPerFrame)
+            {
+                counter = 0;
+                yield return null;
+            }
+            else counter++;
 		}
 		tip.MovePosition(targetPosition);
 		audioSource.pitch = Random.Range(0.95f, 1.05f);
@@ -125,6 +133,7 @@ public class FingerBehavior : MonoBehaviour {
         tip.MovePosition(targetPosition);
 		yield return new WaitForSeconds(0.1f);
         tip.MovePosition(tip.transform.position + (Vector3.up * 0.1f));
+        tip.transform.position = tip.transform.position + (Vector3.up * 0.1f);
 	}
 
 }
