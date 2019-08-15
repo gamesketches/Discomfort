@@ -278,7 +278,7 @@ public class TouchTypistManager : MonoBehaviour {
 	void SetUpPhrases() {
 		phrases = new Queue<Phrase>();
         phrases.Enqueue(new Phrase("Type these letters", KeyCode.None, KeyCode.None, 14, Vector2.zero, null));
-		phrases.Enqueue(new Phrase ("And Mind The Timer", KeyCode.None, KeyCode.None, 4, Vector2.zero, null));
+        phrases.Enqueue(new Phrase ("And Mind The Timer", KeyCode.None, KeyCode.None, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Blue letters must be held", KeyCode.K, KeyCode.None, 4, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Letting go is starting over", KeyCode.J, KeyCode.None, 8, Vector2.zero, null));
 		phrases.Enqueue(new Phrase("Now it begins", KeyCode.R, KeyCode.U, 2, Vector2.zero, null));
@@ -287,9 +287,9 @@ public class TouchTypistManager : MonoBehaviour {
 
 	void SetUpPostTutorialPhrases() {
 		phrases.Enqueue(new Phrase("The man is also filial piety", KeyCode.W, KeyCode.V,4, Vector3.zero, null));
-		phrases.Enqueue(new Phrase("and good guilty of those who", KeyCode.R, KeyCode.Z, 4, Vector3.zero, null));
+		phrases.Enqueue(new Phrase("and good guilty of those who", KeyCode.P, KeyCode.Z, 4, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("fresh bad guilty", KeyCode.X, KeyCode.P, 7, Vector3.zero, null));
-		phrases.Enqueue(new Phrase("and good for chaos", KeyCode.V, KeyCode.K, 6, Vector3.zero, null));
+		phrases.Enqueue(new Phrase("and good for chaos", KeyCode.U, KeyCode.K, 6, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("not the there", KeyCode.S, KeyCode.J, 2, Vector3.zero, null));
 		phrases.Enqueue(new Phrase("Gentleman of this", KeyCode.X, KeyCode.R, 4, Vector3.zero, null));
 		phrases.Enqueue(new Phrase ("the legislation and students", KeyCode.Q, KeyCode.V, 9, Vector2.zero, null));
