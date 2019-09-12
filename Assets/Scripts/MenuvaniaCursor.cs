@@ -25,7 +25,7 @@ public class MenuvaniaCursor : MonoBehaviour {
 		RepositionCursor();
 		focusDepth = FocusDepth.Drawer;
 		player = GameObject.FindGameObjectWithTag("Player");
-		while(!InputManager.ActiveDevice.AnyButton.WasPressed) {
+		while(!InputManager.ActiveDevice.AnyButton.WasPressed && ! Input.GetKeyDown(KeyCode.Space)) {
 			yield return null;
 		}
 		focusedItem.GetComponent<DrawerBehaviour>().UnlockDrawer();
